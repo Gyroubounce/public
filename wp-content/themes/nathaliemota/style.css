@@ -8,3 +8,126 @@ Version: 1.0
 Tags: green IT, Thèmes personnalisés, scratch
 Text Domain: nathaliemota
 */
+
+/* Réinitialiser les marges et les espacements par défaut */
+/* Réinitialiser les marges et les espacements par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ajoute box-sizing pour éviter les calculs erronés de largeur/hauteur */
+}
+
+html {
+    margin-top: 0 !important;
+}
+
+/* Conteneur du header */
+/* Conteneur du header */
+.container {
+    display: flex;
+    justify-content: space-between; /* Aligne les éléments à gauche et à droite */
+    align-items: center; /* Centre les éléments verticalement */
+    width: 100%; /* Conteneur prend toute la largeur de l'écran */
+    max-width: 1440px; /* Largeur maximale pour les grands écrans */
+    padding: 0 150px; /* Ajoute un padding de 150px à gauche et à droite */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    height: 80px; /* Hauteur du conteneur */
+}
+
+
+a.logo img {
+    display: block; /* Supprimer tout espace en bas de l'image */
+
+}
+
+/* Menu principal */
+.main-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.main-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Lien actif avec aria-current */
+.main-menu a[aria-current="page"] {
+    color: #0073e6; /* Couleur pour la page active */
+    font-weight: bold;
+}
+
+/* Effet au survol */
+.main-menu a:hover {
+    color: #0056b3;
+}
+
+/* S'assurer que l'image du header prend toute la largeur */
+.header-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Centrer le footer */
+.main-footer {
+    width: 100%;
+    color: #fff; /* Couleur du texte */
+    padding: 20px 0; /* Espacement autour du contenu du footer */
+}
+
+.footer-container {
+    max-width: 1440px; /* Largeur maximale du footer */
+    margin: 0 auto; /* Centre horizontalement */
+    padding: 0 10px; /* Espacement interne si nécessaire */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement si le footer a plus de contenu */
+}
+
+.footer-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-right: 20px; /* Espacement entre les éléments du menu */
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #0073e6; /* Change la couleur au survol */
+}
+
+
+/* Menu mobile - pour adapter si nécessaire */
+@media (max-width: 768px) {
+    .main-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-menu li {
+        margin: 10px 0;
+    }
+
+    /* Ajoutez un bouton de menu mobile si nécessaire */
+}
