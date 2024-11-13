@@ -35,3 +35,4 @@
             <img src="http://nathaliemota.local/wp-content/uploads/2024/11/Header.png" alt="Image d'en-tête">
         </div>
 </header>
+

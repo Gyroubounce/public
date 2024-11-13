@@ -1,4 +1,7 @@
-    <footer class="main-footer">
+
+<?php get_template_part('template-parts/modal-contact'); ?>
+
+<footer class="main-footer">
         <div class="footer-container">
             <?php
             // Afficher le menu du footer
@@ -12,6 +15,8 @@
             ?>
         </div>
     </footer>
+
+
 
 </body>
 </html>

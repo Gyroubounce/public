@@ -10,8 +10,10 @@ function nathaliemota_register_menus() {
 }
 add_action('after_setup_theme', 'nathaliemota_register_menus');
 
-// Enqueue les styles et scripts
 function nathaliemota_enqueue_styles() {
+    // Charger le script JS personnalisé
+    wp_enqueue_script('custom-modal-script', get_template_directory_uri() . '/js/script.js');
+
     // Charger le fichier CSS du thème
     wp_enqueue_style('nathaliemota-style', get_stylesheet_uri());
 }
