@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The base configuration for WordPress
  *
@@ -95,7 +96,7 @@ define( 'WP_DEBUG_DISPLAY', true );
 
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
 /* That's all, stop editing! Happy publishing. */
-define('WP_CACHE', false);
+ // By Speed Optimizer by SiteGround
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {

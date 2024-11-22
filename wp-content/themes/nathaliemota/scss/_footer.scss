@@ -1,0 +1,39 @@
+/* Centrer le footer */
+.main-footer {
+    width: 100%;
+    color: #fff; /* Couleur du texte */
+    padding: 10px 0; /* Espacement autour du contenu du footer */
+    border-top: 1px solid black;
+}
+
+.footer-container {
+    max-width: 1440px; /* Largeur maximale du footer */
+    margin: 0 auto; /* Centre horizontalement */
+    padding: 0px; /* Espacement interne si nécessaire */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement si le footer a plus de contenu */
+}
+
+.footer-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    gap: 100px;
+}
+
+.footer-menu li {
+    margin: 0px; /* Espacement entre les éléments du menu */
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #0073e6; /* Change la couleur au survol */
+}

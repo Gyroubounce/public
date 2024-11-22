@@ -1,2 +1,91 @@
 [13-Nov-2024 13:31:25 UTC] Automatic updates starting...
 [13-Nov-2024 13:31:26 UTC] Automatic updates complete.
+[15-Nov-2024 14:08:42 UTC] Automatic updates starting...
+[15-Nov-2024 14:08:42 UTC] Automatic updates complete.
+[15-Nov-2024 14:20:49 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>imagify</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\functions.php on line 6114
+[18-Nov-2024 07:59:10 UTC] Automatic updates starting...
+[18-Nov-2024 07:59:11 UTC] Automatic updates complete.
+[18-Nov-2024 09:15:43 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[18-Nov-2024 09:45:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function twenty_twenty_one_get_icon_svg() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php:36
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-blog-header.php(19): require_once('C:\\Users\\lidry\\...')
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\index.php(17): require('C:\\Users\\lidry\\...')
+#3 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php on line 36
+[18-Nov-2024 09:45:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function twenty_twenty_one_get_icon_svg() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php:36
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-blog-header.php(19): require_once('C:\\Users\\lidry\\...')
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\index.php(17): require('C:\\Users\\lidry\\...')
+#3 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php on line 36
+[18-Nov-2024 10:28:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function twenty_twenty_one_get_icon_svg() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php:36
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-blog-header.php(19): require_once('C:\\Users\\lidry\\...')
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\index.php(17): require('C:\\Users\\lidry\\...')
+#3 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php on line 36
+[18-Nov-2024 10:29:14 UTC] PHP Notice:  La fonction wp_insert_post a été appelée de façon <strong>incorrecte</strong>. Taxonomie non valide : photo Veuillez lire <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Débogage dans WordPress</a> (en) pour plus d’informations. (Ce message a été ajouté à la version 4.4.0.) in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\functions.php on line 6114
+[18-Nov-2024 10:29:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function twenty_twenty_one_get_icon_svg() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php:36
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-blog-header.php(19): require_once('C:\\Users\\lidry\\...')
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\index.php(17): require('C:\\Users\\lidry\\...')
+#3 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php on line 36
+[18-Nov-2024 10:31:32 UTC] PHP Warning:  Undefined property: WP_Error::$term_id in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\fields\class-acf-field-taxonomy.php on line 552
+[18-Nov-2024 10:31:32 UTC] PHP Warning:  Undefined property: WP_Error::$name in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 136
+[18-Nov-2024 10:31:32 UTC] PHP Warning:  Undefined property: WP_Error::$taxonomy in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 144
+[18-Nov-2024 10:33:11 UTC] PHP Warning:  Undefined property: WP_Error::$term_id in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\fields\class-acf-field-taxonomy.php on line 552
+[18-Nov-2024 10:33:11 UTC] PHP Warning:  Undefined property: WP_Error::$name in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 136
+[18-Nov-2024 10:33:11 UTC] PHP Warning:  Undefined property: WP_Error::$taxonomy in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 144
+[18-Nov-2024 10:34:28 UTC] PHP Warning:  Undefined property: WP_Error::$term_id in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\fields\class-acf-field-taxonomy.php on line 552
+[18-Nov-2024 10:34:28 UTC] PHP Warning:  Undefined property: WP_Error::$name in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 136
+[18-Nov-2024 10:34:28 UTC] PHP Warning:  Undefined property: WP_Error::$taxonomy in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 144
+[18-Nov-2024 10:35:16 UTC] PHP Warning:  Undefined property: WP_Error::$term_id in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\fields\class-acf-field-taxonomy.php on line 552
+[18-Nov-2024 10:35:16 UTC] PHP Warning:  Undefined property: WP_Error::$name in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 136
+[18-Nov-2024 10:35:16 UTC] PHP Warning:  Undefined property: WP_Error::$taxonomy in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 144
+[18-Nov-2024 10:35:19 UTC] PHP Warning:  Undefined property: WP_Error::$term_id in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\fields\class-acf-field-taxonomy.php on line 552
+[18-Nov-2024 10:35:19 UTC] PHP Warning:  Undefined property: WP_Error::$name in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 136
+[18-Nov-2024 10:35:19 UTC] PHP Warning:  Undefined property: WP_Error::$taxonomy in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 144
+[18-Nov-2024 10:36:15 UTC] PHP Warning:  Undefined property: WP_Error::$term_id in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\fields\class-acf-field-taxonomy.php on line 552
+[18-Nov-2024 10:36:15 UTC] PHP Warning:  Undefined property: WP_Error::$name in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 136
+[18-Nov-2024 10:36:15 UTC] PHP Warning:  Undefined property: WP_Error::$taxonomy in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 144
+[18-Nov-2024 10:36:19 UTC] PHP Warning:  Undefined property: WP_Error::$term_id in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\fields\class-acf-field-taxonomy.php on line 552
+[18-Nov-2024 10:36:19 UTC] PHP Warning:  Undefined property: WP_Error::$name in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 136
+[18-Nov-2024 10:36:19 UTC] PHP Warning:  Undefined property: WP_Error::$taxonomy in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\advanced-custom-fields\includes\api\api-term.php on line 144
+[18-Nov-2024 10:37:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function twenty_twenty_one_get_icon_svg() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php:36
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-blog-header.php(19): require_once('C:\\Users\\lidry\\...')
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\index.php(17): require('C:\\Users\\lidry\\...')
+#3 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php on line 36
+[18-Nov-2024 13:09:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function twenty_twenty_one_get_icon_svg() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php:36
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-blog-header.php(19): require_once('C:\\Users\\lidry\\...')
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\index.php(17): require('C:\\Users\\lidry\\...')
+#3 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single.php on line 36
+[18-Nov-2024 13:21:21 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : invalid_schedule. Message d’erreur : L’évènement planifié n’existe pas.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[18-Nov-2024 13:23:38 UTC] Erreur d’événement de replanification de tâche pour le crochet ewww_image_optimizer_relative_migration. Code d’erreur : invalid_schedule. Message d’erreur : L’évènement planifié n’existe pas.. Données : {"schedule":"ewwwio_relative_migration_interval","args":[],"interval":300}
+[18-Nov-2024 13:24:39 UTC] PHP Warning:  Undefined variable $network in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\plugins\ewww-image-optimizer\common.php on line 12047
+[20-Nov-2024 09:38:28 UTC] Automatic updates starting...
+[20-Nov-2024 09:38:28 UTC] Automatic updates complete.
+[20-Nov-2024 13:30:39 UTC] Automatic updates starting...
+[20-Nov-2024 13:30:39 UTC] Automatic updates complete.
+[20-Nov-2024 13:32:48 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>imagify</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\functions.php on line 6114
+[20-Nov-2024 13:34:52 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[21-Nov-2024 07:54:56 UTC] Automatic updates starting...
+[21-Nov-2024 07:54:57 UTC] Automatic updates complete.
+[21-Nov-2024 09:15:44 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[21-Nov-2024 12:46:06 UTC] PHP Warning:  Attempt to read property "ID" on string in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single-photos.php on line 53
+[21-Nov-2024 12:46:06 UTC] PHP Warning:  Attempt to read property "ID" on string in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\single-photos.php on line 56
+[21-Nov-2024 13:30:35 UTC] Automatic updates starting...
+[21-Nov-2024 13:30:36 UTC] Automatic updates complete.
+[22-Nov-2024 13:30:44 UTC] Automatic updates starting...
+[22-Nov-2024 13:30:45 UTC] Automatic updates complete.
+[22-Nov-2024 14:24:31 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}

@@ -1,0 +1,70 @@
+/* Conteneur du header */
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Aligne les éléments à gauche et à droite */
+    align-items: center; /* Centre les éléments verticalement */
+    width: 100%; /* Conteneur prend toute la largeur de l'écran */
+    max-width: 1440px; /* Largeur maximale pour les grands écrans */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    height: 80px; /* Hauteur du conteneur */
+}
+
+
+.logo {
+    margin-left: 45px;
+}
+
+/* Menu principal */
+.main-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.main-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 40px;
+    transition: color 0.3s ease;
+}
+
+/* Lien actif avec aria-current */
+.main-menu a[aria-current="page"] {
+    color: #0073e6; /* Couleur pour la page active */
+    font-weight: bold;
+}
+
+/* Effet au survol */
+.main-menu a:hover {
+    color: #0056b3;
+}
+
+/* S'assurer que l'image du header prend toute la largeur */
+.header-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Menu mobile - pour adapter si nécessaire */
+@media (max-width: 768px) {
+    .main-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-menu li {
+        margin: 10px 0;
+    }
+
+    /* Ajoutez un bouton de menu mobile si nécessaire */
+}

@@ -14,8 +14,17 @@ function nathaliemota_enqueue_styles() {
     // Charger le script JS personnalisé
     wp_enqueue_script('custom-modal-script', get_template_directory_uri() . '/js/script.js');
 
+    // photo-navigation
+    wp_enqueue_script('photo-navigation', get_stylesheet_directory_uri() . '/js/photo-navigation.js');
+
+    // miniature
+    wp_enqueue_script('miniature', get_stylesheet_directory_uri() . '/js/référence.js');
+
     // Charger le fichier CSS du thème
     wp_enqueue_style('nathaliemota-style', get_stylesheet_uri());
+
+    wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/scss/main.css', array(), '1.0', 'all');
+
 }
 add_action('wp_enqueue_scripts', 'nathaliemota_enqueue_styles');
 
