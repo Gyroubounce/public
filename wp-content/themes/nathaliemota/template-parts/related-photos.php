@@ -42,17 +42,17 @@
                     </a>
                     <div class="related-overlay">
                         <!-- Icônes de liens -->
-                        <a href="<?php the_permalink(); ?>" class="icon eye">👁️</a>
+                        <a href="<?php the_permalink(); ?>" class="icon eye"><img src="http://nathaliemota.local/wp-content/uploads/2024/11/eye.png" alt="Eye Icon"></a>
                     
                    
-    <!-- Icônes de liens -->
-    <a href="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>" 
-       data-lightbox="image-<?php the_ID(); ?>" class="icon fullscreen">⛶</a>
-    <!--
-        Lien pour ouvrir la modale 
-<a href="javascript:void(0);" id="openModal" class="icon fullscreen">⛶</a>
+                        <!-- Icônes de liens -->
+                        <a href="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>" 
+                        data-lightbox="image-<?php the_ID(); ?>" class="icon fullscreen"><img src="http://nathaliemota.local/wp-content/uploads/2024/11/Icon_fullscreen.png" alt="icône full-screen"></a>
+                        <!--
+                                Lien pour ouvrir la modale 
+                        <a href="javascript:void(0);" id="openModal" class="icon fullscreen">⛶</a>
 
- -->
+                    -->
                         <!-- Texte en bas -->
                         <div class="text-bottom">
                             <div class="text-bottom-flex">

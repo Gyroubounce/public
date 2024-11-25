@@ -55,6 +55,7 @@ Text Domain: nathaliemota
 
 .photo-info h2 {
     margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
 .photo-info ul {
@@ -131,24 +132,19 @@ Text Domain: nathaliemota
     width: 50%;
 }
 
+
 .thumbnail-container {
-    display: flex;
-
+    position: relative;
+    opacity: 1; /* Miniature invisible par défaut */
+    transition: opacity 0.3s ease-in-out;
 }
 
-.current-thumbnail {
-    border: 2px solid #000; /* Bordure noire autour de la miniature actuelle */
-}
 
 /* Miniature */
 .next-thumbnail {
     max-width: 100px; /* Réduit la largeur à la moitié (par rapport à 150px) */
     max-height: 100px; /* Ajuste la hauteur proportionnellement */
     transition: transform 0.3s; /* Animation douce au survol */
-}
-
-.next-thumbnail:hover {
-    transform: scale(1.1); /* Augmente légèrement au survol */
 }
 
 /* Flèches sous la miniature */
@@ -168,6 +164,9 @@ Text Domain: nathaliemota
     color: #555;
 }
 
+.arrows-navigation a:hover + .thumbnail-container {
+    opacity: 1; /* Miniature visible au survol */
+}
 
 /* Englobe la section pour la centrer */
 .related-photos-wrapper {
@@ -259,10 +258,15 @@ Text Domain: nathaliemota
     color: white;
 }
 
+.text-bottom {
+    width: 100%;
+}
+
 .text-bottom-flex {
     display: flex;
     flex-direction: row;
-    gap: 300px;
+    justify-content: space-between;
+    margin: 10px;
 }
 
 /* La modale (masque de fond) */

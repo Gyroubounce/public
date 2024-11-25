@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const prevPhoto = document.querySelector('.prev-photo');
     const nextPhoto = document.querySelector('.next-photo');
 
-    // Fonction pour mettre à jour la miniature sans supprimer la balise <a>
-    function updateThumbnail(url, postId) {
-        // Effectuer une requête AJAX pour obtenir la nouvelle miniature
+    // Fonction pour mettre à jour la miniature
+    function updateThumbnail(url) {
+        console.log("Tentative de mise à jour de la miniature avec l'URL :", url);
         fetch(url)
             .then(response => response.text())
             .then(html => {
@@ -14,36 +14,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 const newThumbnail = doc.querySelector('.next-thumbnail');
 
                 if (newThumbnail) {
-                    // Trouver la balise <a> dans le container
+                    // Mise à jour de la miniature
                     const link = thumbnailContainer.querySelector('a');
-
                     if (link) {
-                        // Mettre à jour l'image dans le lien
                         link.innerHTML = '';
                         link.appendChild(newThumbnail);
-
-                        // Mettre à jour l'attribut 'data-next' de la balise <a>
-                        const newNextUrl = doc.querySelector('#thumbnail-link')?.getAttribute('data-next');
-                        if (newNextUrl) {
-                            link.setAttribute('data-next', newNextUrl);
-                        }
+                        console.log("Miniature mise à jour avec succès.");
                     } else {
-                        console.error("La balise <a> est introuvable dans le container.");
+                        console.error("Lien pour la miniature introuvable.");
                     }
-                }
-
-                // Mettre à jour les flèches
-                const newPrev = doc.querySelector('.prev-photo');
-                const newNext = doc.querySelector('.next-photo');
-
-                if (prevPhoto && newPrev) {
-                    prevPhoto.dataset.url = newPrev.dataset.url;
-                    prevPhoto.dataset.id = newPrev.dataset.id;
-                }
-
-                if (nextPhoto && newNext) {
-                    nextPhoto.dataset.url = newNext.dataset.url;
-                    nextPhoto.dataset.id = newNext.dataset.id;
+                } else {
+                    console.error("Aucune miniature trouvée dans la page.");
                 }
             })
             .catch(error => {
@@ -51,55 +32,43 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    // Gestion des clics sur la flèche précédente
+    // Événements de survol pour les flèches gauche et droite
+    if (prevPhoto) {
+        prevPhoto.addEventListener('mouseover', function() {
+            const prevPostUrl = prevPhoto.dataset.url;
+            console.log("Survol de la flèche précédente. URL de la photo précédente :", prevPostUrl);
+            updateThumbnail(prevPostUrl);  // Mettre à jour la miniature pour le post précédent
+        });
+    }
+
+    if (nextPhoto) {
+        nextPhoto.addEventListener('mouseover', function() {
+            const nextPostUrl = nextPhoto.dataset.url;
+            console.log("Survol de la flèche suivante. URL de la photo suivante :", nextPostUrl);
+            updateThumbnail(nextPostUrl);  // Mettre à jour la miniature pour le post suivant
+        });
+    }
+
+    // Clic sur les flèches pour rediriger
     if (prevPhoto) {
         prevPhoto.addEventListener('click', (e) => {
             e.preventDefault();
             const url = prevPhoto.dataset.url;
-            const postId = prevPhoto.dataset.id;
-
-            // Vérifier si l'URL est disponible
             if (url) {
-                updateThumbnail(url, postId);
-                console.log("URL précédente :", url);
-            } else {
-                console.error("URL précédente introuvable.");
+                window.location.href = url; // Redirection
+                console.log("Redirection vers la photo précédente :", url);
             }
         });
     }
 
-    // Gestion des clics sur la flèche suivante
     if (nextPhoto) {
         nextPhoto.addEventListener('click', (e) => {
             e.preventDefault();
             const url = nextPhoto.dataset.url;
-            const postId = nextPhoto.dataset.id;
-
-            // Vérifier si l'URL est disponible
             if (url) {
-                updateThumbnail(url, postId);
-                console.log("URL suivante :", url);
-            } else {
-                console.error("URL suivante introuvable.");
+                window.location.href = url; // Redirection
+                console.log("Redirection vers la photo suivante :", url);
             }
         });
-    }
-
-    // Gestion du clic sur la miniature pour naviguer
-    const thumbnailLink = thumbnailContainer.querySelector('#thumbnail-link');
-    if (thumbnailLink) {
-        thumbnailLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            const nextUrl = thumbnailLink.getAttribute('data-next');
-
-            if (nextUrl) {
-                console.log("Navigation vers :", nextUrl);
-                window.location.href = nextUrl; // Redirige vers l'URL
-            } else {
-                console.error("L'attribut 'data-next' est manquant.");
-            }
-        });
-    } else {
-        console.error("Le lien miniature (#thumbnail-link) est introuvable.");
     }
 });

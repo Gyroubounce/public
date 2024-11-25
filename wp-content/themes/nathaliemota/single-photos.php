@@ -2,7 +2,7 @@
 /**
  * Template for displaying single photos (Custom Post Type: Photos).
  *
- * @package Your_Theme_Name
+ * @package NATHALIE_MOTA
  */
 
 get_header();
@@ -14,7 +14,18 @@ get_header();
             <div class="photo-main">
                 <!-- Bloc gauche -->
                 <div class="photo-info">
-                    <h2><?php echo strtoupper(get_the_title()); ?></h2>
+                <h2>
+    <?php 
+        $title = get_the_title();
+        // Ajoute un <br> uniquement entre les mots tout en conservant la ponctuation attachée au mot précédent
+        $formattedTitle = preg_replace('/\s+([^\s.,!?]+)/', '<br>$1', $title);
+        echo $formattedTitle;
+    ?>
+</h2>
+
+
+
+
 
                     <ul>
                         <!-- Référence -->
@@ -85,9 +96,9 @@ get_header();
                     <p>Cette photo vous intéresse ?</p>            
                 </div>
                 <div>
-                        <!-- Lien pour ouvrir la modale -->
-                    <a href="javascript:void(0);" id="openContactModal" class="contact-link btn" data-ref="<?php echo get_field('ref_photo'); ?>">
-                        Contact
+                    <!-- Lien pour ouvrir la modale -->
+                    <a href="javascript:void(0);" class="contact-link btn" data-ref="<?php the_field('reference'); ?>">
+                    Contact
                     </a>
                 </div>
             </div>
@@ -99,7 +110,7 @@ get_header();
                     $next_post = get_post(); 
                     ?>
                     <?php if ($next_post) : ?>
-                        <a href="#" id="thumbnail-link" data-next="<?php echo get_permalink($next_post->ID); ?>">
+                        <a id="thumbnail-link" data-next="<?php echo get_permalink($next_post->ID); ?>">
                             <?php
                                 // Affiche la miniature de la photo suivante
                                 echo get_the_post_thumbnail($next_post->ID, 'thumbnail', ['class' => 'next-thumbnail']);

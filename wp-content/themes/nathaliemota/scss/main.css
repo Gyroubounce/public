@@ -44,8 +44,10 @@ h1 {
 }
 
 h2 {
-  font-size: 66px;
+  font-size: 58px;
   font-weight: 500; /* Semi-bold */
+  font-style: italic;
+  line-height: 58px;
 }
 
 h3 {
@@ -250,6 +252,7 @@ p {
   color: #333;
   margin-bottom: 10px;
   display: block;
+  text-align: left;
 }
 
 /* Style des champs de texte */
@@ -279,7 +282,7 @@ p {
   color: white;
   padding: 10px 20px;
   height: 50px;
-  width: 310px;
+  width: 350px;
   font-size: 16px;
   border: none;
   border-radius: 4px;
