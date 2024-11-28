@@ -43,16 +43,24 @@
     color: #0056b3;
 }
 
-/* S'assurer que l'image du header prend toute la largeur */
+/* Conteneur pour l'image d'en-tête */
 .header-image {
-    width: 100%;
+    width: 100%; /* Prend toute la largeur */
+    height: 85vh; /* Hauteur du bandeau (50% de la hauteur de la fenêtre) */
     overflow: hidden;
-}
-
-.header-image img {
-    width: 100%;
-    height: auto;
-}
+    position: relative; /* Permet des ajustements supplémentaires */
+  }
+  
+  /* Image à l'intérieur du conteneur */
+  .header-image img {
+    width: 100%; /* S'adapte à la largeur du conteneur */
+    height: 100%; /* Remplit le conteneur en hauteur */
+    object-fit: cover; /* Coupe ou étire l'image pour remplir le conteneur sans déformer */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
 
 
 /* Menu mobile - pour adapter si nécessaire */

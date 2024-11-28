@@ -91,3 +91,9 @@ Stack trace:
 [22-Nov-2024 14:24:31 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}
 [25-Nov-2024 08:21:06 UTC] Automatic updates starting...
 [25-Nov-2024 08:21:06 UTC] Automatic updates complete.
+[28-Nov-2024 08:26:14 UTC] Automatic updates starting...
+[28-Nov-2024 08:26:14 UTC]   Automatic plugin updates starting...
+[28-Nov-2024 08:26:14 UTC]   Automatic plugin updates complete.
+[28-Nov-2024 08:26:14 UTC] Automatic updates complete.
+[28-Nov-2024 08:39:05 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[28-Nov-2024 08:59:15 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}

@@ -124,15 +124,23 @@ p {
   color: #0056b3;
 }
 
-/* S'assurer que l'image du header prend toute la largeur */
+/* Conteneur pour l'image d'en-tête */
 .header-image {
-  width: 100%;
+  width: 100%; /* Prend toute la largeur */
+  height: 85vh; /* Hauteur du bandeau (50% de la hauteur de la fenêtre) */
   overflow: hidden;
+  position: relative; /* Permet des ajustements supplémentaires */
 }
 
+/* Image à l'intérieur du conteneur */
 .header-image img {
-  width: 100%;
-  height: auto;
+  width: 100%; /* S'adapte à la largeur du conteneur */
+  height: 100%; /* Remplit le conteneur en hauteur */
+  -o-object-fit: cover;
+     object-fit: cover; /* Coupe ou étire l'image pour remplir le conteneur sans déformer */
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* Menu mobile - pour adapter si nécessaire */
@@ -300,4 +308,366 @@ p {
   color: #ff4d4d;
   font-size: 14px;
   margin-top: 10px;
+}
+
+/* Définition du contenu de la page */
+.photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 250px;
+}
+
+.photo-contenair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Zone supérieur */
+.photo-content-wrapper {
+  padding: 20px;
+  width: 100%;
+}
+
+/* division de la zone */
+.photo-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: normal;
+  gap: 30px;
+}
+
+/* Bloc gauche : Informations */
+.photo-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 20px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #333;
+  width: 50%;
+}
+
+.photo-info h2 {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.photo-info ul {
+  list-style: none;
+}
+
+.photo-info li {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Bloc droit : Affichage de la photo */
+.photo-display {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 50%;
+}
+
+.photo-display img.photo-full {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Bloc milieu : Interactions */
+/* Wrapper pour photo-interactions */
+.photo-interactions-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.photo-interactions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-bottom: 1px solid #000000;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+/* Bouton Contact */
+.contact-link.btn {
+  display: inline-block;
+  padding: 15px 100px;
+  color: #000000;
+  background-color: #D8D8D8;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-link.btn:hover {
+  background-color: #444;
+}
+
+/* Conteneur navigation */
+.photo-navigation {
+  display: flex;
+  flex-direction: column; /* Dispose les éléments en colonne */
+  align-items: end; /* Centre les éléments horizontalement */
+  width: 50%;
+}
+
+.thumbnail-container {
+  position: relative;
+  opacity: 1; /* Miniature invisible par défaut */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Miniature */
+.next-thumbnail {
+  max-width: 100px; /* Réduit la largeur à la moitié (par rapport à 150px) */
+  max-height: 100px; /* Ajuste la hauteur proportionnellement */
+  transition: transform 0.3s; /* Animation douce au survol */
+}
+
+/* Flèches sous la miniature */
+.arrows-navigation {
+  display: flex;
+  gap: 40px; /* Espacement entre les flèches */
+}
+
+.nav-link {
+  font-size: 24px; /* Taille des flèches */
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #555;
+}
+
+.arrows-navigation a:hover + .thumbnail-container {
+  opacity: 1; /* Miniature visible au survol */
+}
+
+/* Englobe la section pour la centrer */
+.related-photos-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 100px;
+}
+
+/* Section des photos liées */
+.related-photos {
+  margin-top: 50px;
+}
+
+.propose {
+  margin-bottom: 50px;
+}
+
+/* Grille pour les deux photos */
+.related-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 500px;
+  width: 100%;
+  gap: 30px;
+}
+
+/* Chaque élément prend 50% de la largeur */
+.related-item {
+  position: relative;
+  width: 50%;
+}
+
+.related-item img.photo-full {
+  width: 100%; /* Ou ajustez la largeur selon vos besoins */
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.related-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.related-item:hover .related-overlay {
+  opacity: 1;
+}
+
+.icon {
+  font-size: 2rem; /* Taille des icônes */
+  color: white; /* Couleur des icônes */
+  text-decoration: none;
+}
+
+/* Icône 'eye' centrée */
+.related-overlay .eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrer l'élément */
+}
+
+/* Icône 'fullscreen' en haut à droite */
+.related-overlay .fullscreen {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Texte en bas (Référence à gauche, Catégorie à droite) */
+.related-overlay .text-bottom {
+  position: absolute;
+  bottom: 10px;
+  padding: 0 10px; /* Espacement sur les bords */
+  color: white;
+}
+
+.text-bottom {
+  width: 100%;
+}
+
+.text-bottom-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 250px;
+}
+.filters .filter-group,
+.filters .filter-sort {
+  display: flex;
+  gap: 10px;
+}
+.filters .filter-group select,
+.filters .filter-sort select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  gap: 20px; /* Espace entre les éléments */
+  margin: 20px 250px; /* Marges autour de la grille */
+}
+.photo-grid .photo-item {
+  position: relative; /* Nécessaire pour positionner l'overlay par rapport à l'image */
+  overflow: hidden; /* Empêche le débordement des éléments */
+}
+.photo-grid .photo-item a {
+  display: block; /* Lien comme un bloc pour que l'image occupe toute la zone */
+}
+.photo-grid .photo-item .photo-full {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease; /* Effet de zoom lors du survol */
+}
+.photo-grid .photo-item:hover .photo-full {
+  transform: scale(1.05); /* Zoom léger au survol */
+}
+.photo-grid .photo-item .photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour l'overlay */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  /* Icône 'eye' au centre */
+  /* Icône 'fullscreen' en haut à droite */
+}
+.photo-grid .photo-item .photo-overlay .eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrer l'élément */
+}
+.photo-grid .photo-item .photo-overlay .fullscreen {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.photo-grid .photo-item .photo-overlay .text-filtre {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.photo-grid .photo-item .photo-overlay .text-filtre .text-filtre-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.photo-grid .photo-item:hover .photo-overlay {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s;
+}
+
+.load-more-container {
+  text-align: center;
+  margin: 20px 0;
+}
+.load-more-container #load-more-photos-btn {
+  padding: 20px 100px;
+  background-color: #D8D8D8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.load-more-container #load-more-photos-btn:hover {
+  background-color: #383838;
+}
+
+@media screen and (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr; /* Sur les petits écrans, une seule colonne */
+  }
 }/*# sourceMappingURL=main.css.map */
