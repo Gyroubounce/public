@@ -1,5 +1,7 @@
 
 <?php get_template_part('template-parts/modal-contact'); ?>
+<?php get_template_part('template-parts/modal-screen'); ?>
+
 
 <footer class="main-footer">
         <div class="footer-container">

@@ -16,6 +16,7 @@ function nathaliemota_enqueue_assets() {
     // Scripts JS
     wp_enqueue_script('custom-modal-script', get_template_directory_uri() . '/js/script.js');
     wp_enqueue_script('photo-navigation', get_template_directory_uri() . '/js/photo-navigation.js');
+ 
     
     wp_enqueue_script('charger-plus', get_template_directory_uri() . '/js/charger-plus.js');
 
@@ -30,6 +31,7 @@ function nathaliemota_enqueue_assets() {
       $script = 'var ajaxurl = "' . admin_url('admin-ajax.php') . '";';
       wp_add_inline_script('filtre-photo', $script);
 
+      wp_enqueue_script('moodal-screen', get_template_directory_uri() . '/js/modal-screen.js');
 
     // Styles CSS
     wp_enqueue_style('nathaliemota-style', get_stylesheet_uri());
@@ -84,10 +86,11 @@ function load_more_photos() {
                     <a href="<?php the_permalink(); ?>" class="icon eye">
                         <img src="http://nathaliemota.local/wp-content/uploads/2024/11/eye.png" alt="Eye Icon">
                     </a>
-                    <a href="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" 
-                       data-lightbox="image-<?php the_ID(); ?>" class="icon fullscreen">
-                        <img src="http://nathaliemota.local/wp-content/uploads/2024/11/Icon_fullscreen.png" alt="Icône plein écran">
-                    </a>
+                   <!-- Icônes de liens -->
+                   <a href="#" data-lightbox="image-<?php the_ID(); ?>" class="icon fullscreen" data-photo-url="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>" data-photo-title="<?php the_title(); ?>" data-photo-reference="<?php the_field('reference'); ?>" data-photo-category="<?php echo esc_html( get_the_terms( get_the_ID(), 'categorie' )[0]->name ); ?>">
+                            <img src="http://nathaliemota.local/wp-content/uploads/2024/11/Icon_fullscreen.png" alt="icône full-screen">
+                        </a>
+                    
                     <div class="text-filtre">
                         <div class="text-filtre-flex">
                             <div><?php echo esc_html(get_field('reference') ?: ''); ?></div>
@@ -173,10 +176,11 @@ function load_filtered_photos() {
                     <a href="<?php the_permalink(); ?>" class="icon eye">
                         <img src="http://nathaliemota.local/wp-content/uploads/2024/11/eye.png" alt="Eye Icon">
                     </a>
-                    <a href="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" 
-                       data-lightbox="image-<?php the_ID(); ?>" class="icon fullscreen">
-                        <img src="http://nathaliemota.local/wp-content/uploads/2024/11/Icon_fullscreen.png" alt="Icône plein écran">
-                    </a>
+                     <!-- Icônes de liens -->
+                     <a href="#" data-lightbox="image-<?php the_ID(); ?>" class="icon fullscreen" data-photo-url="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>" data-photo-title="<?php the_title(); ?>" data-photo-reference="<?php the_field('reference'); ?>" data-photo-category="<?php echo esc_html( get_the_terms( get_the_ID(), 'categorie' )[0]->name ); ?>">
+                            <img src="http://nathaliemota.local/wp-content/uploads/2024/11/Icon_fullscreen.png" alt="icône full-screen">
+                        </a>
+                    
                 </div>
             </div>
             <?php

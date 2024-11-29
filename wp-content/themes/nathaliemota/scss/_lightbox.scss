@@ -1,0 +1,133 @@
+/* Style général pour l'overlay */
+.lightbox-overlay {
+    display: none; /* Cacher par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond noir transparent */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Conteneur de la Lightbox */
+.lightbox-container {
+    position: relative;
+    text-align: center;
+}
+
+/* En-tête (nom de la photo et bouton de fermeture) */
+.lightbox-header {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+/* Nom de la photo */
+.lightbox-title {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    flex-grow: 1;
+    text-transform: uppercase;
+}
+
+/* Bouton de fermeture */
+.lightbox-close {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Contenu principal de la Lightbox (photo et navigation) */
+.lightbox-main {
+    position: relative;
+    margin-left: 40px;
+    margin-right: 40px;
+    max-width: 100%;
+    max-height: 80vh;
+    margin-top: 80px;
+}
+
+/* Photo */
+.lightbox-photo {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+/* Navigation (précédente et suivante) */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lightbox-info {
+    display: flex;
+}
+
+/* Pied de page avec référence et catégorie */
+.lightbox-footer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+
+    color: white;
+}
+
+
+
+/* Styles supplémentaires pour rendre l'interaction plus fluide */
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.lightbox-close:hover {
+    color: #f1c40f; /* Changer la couleur au survol */
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Media query pour adapter la taille de la lightbox sur mobile */
+@media (max-width: 768px) {
+    .lightbox-container {
+        max-width: 95%;
+    }
+
+    .lightbox-title {
+        font-size: 18px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 30px;
+    }
+
+    .lightbox-reference,
+    .lightbox-category {
+        font-size: 14px;
+    }
+}
