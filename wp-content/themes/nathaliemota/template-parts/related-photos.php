@@ -1,5 +1,4 @@
-<div class="related-photos">
-    <h3 class="propose">Vous aimerez aussi</h3>
+
     <div class="related-grid">
         <?php
         // Récupérer la catégorie liée à la taxonomie 'categorie' via ACF
@@ -80,4 +79,4 @@
             <p>Aucune photo liée dans cette catégorie.</p>
         <?php } ?>
     </div>
-</div>
+

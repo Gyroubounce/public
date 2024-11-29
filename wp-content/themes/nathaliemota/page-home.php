@@ -5,7 +5,6 @@
  */
 get_header();
 ?>
-
 <div class="filters">
     <div class="filter-group">
         <!-- Menu déroulant Catégories -->
@@ -32,29 +31,13 @@ get_header();
     </div>
 
     <!-- Menu déroulant Trier par -->
-    <div class="filter-year">
+    <div class="filter-sort">
         <select id="filter-sort">
-        <option value="2024">2024</option>
-        <option value="2023">2023</option>
-        <option value="2022">2022</option>
+            <option value="date_desc">Trier par : Plus récentes</option>
+            <option value="date_asc">Trier par : Plus anciennes</option>
         </select>
     </div>
 </div>
-
-<script>
-    // Affichage des filtres dans la console pour débogage
-    document.getElementById('filter-category').addEventListener('change', function() {
-        console.log('Filtre catégorie changé:', this.value);
-    });
-
-    document.getElementById('filter-format').addEventListener('change', function() {
-        console.log('Filtre format changé:', this.value);
-    });
-
-    document.getElementById('filter-sort').addEventListener('change', function() {
-        console.log('Filtre trier par changé:', this.value);
-    });
-</script>
 
 <div class="photo-grid" id="photo-gallery">
     <?php
@@ -117,22 +100,12 @@ get_header();
     ?>
 </div>
 
-<!-- Bouton Charger plus -->
-<div class="load-more-container">
-    <button id="load-more-photos-btn">Charger plus</button>
+
+    <!-- Bouton Charger plus -->
+    <div class="load-more-container">
+        <button id="load-more">
+            Charger plus
+        </button>
+    </div>
 </div>
 
-<script>
-    // Log des éléments de la grille de photos
-    const photoItems = document.querySelectorAll('.photo-item');
-    console.log('Éléments de la galerie photo:', photoItems);
-
-    // Log de l'élément du bouton "Charger plus"
-    document.getElementById('load-more-photos-btn').addEventListener('click', function() {
-        console.log('Bouton "Charger plus" cliqué');
-        // Implémenter ici le comportement pour charger plus de photos
-    });
-</script>
-
-<?php
-get_footer();

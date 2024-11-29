@@ -95,7 +95,7 @@ p {
 }
 
 .logo {
-  margin-left: 45px;
+  margin-left: 0;
 }
 
 /* Menu principal */
@@ -108,8 +108,7 @@ p {
 .main-menu a {
   text-decoration: none;
   color: #333;
-  font-size: 16px;
-  padding: 40px;
+  margin-left: 40px;
   transition: color 0.3s ease;
 }
 
@@ -565,7 +564,9 @@ p {
 .filters {
   display: flex;
   justify-content: space-between;
-  margin: 20px 250px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 20px auto;
 }
 .filters .filter-group,
 .filters .filter-sort {
@@ -584,7 +585,9 @@ p {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
   gap: 20px; /* Espace entre les éléments */
-  margin: 20px 250px; /* Marges autour de la grille */
+  width: 100%;
+  max-width: 1440px;
+  margin: 20px auto;
 }
 .photo-grid .photo-item {
   position: relative; /* Nécessaire pour positionner l'overlay par rapport à l'image */
