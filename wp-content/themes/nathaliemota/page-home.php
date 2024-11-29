@@ -39,6 +39,8 @@ get_header();
     </div>
 </div>
 
+
+
 <div class="photo-grid" id="photo-gallery">
     <?php
     // Requête initiale pour 8 photos

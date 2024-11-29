@@ -16,13 +16,21 @@ function nathaliemota_enqueue_assets() {
     // Scripts JS
     wp_enqueue_script('custom-modal-script', get_template_directory_uri() . '/js/script.js');
     wp_enqueue_script('photo-navigation', get_template_directory_uri() . '/js/photo-navigation.js');
-    wp_enqueue_script('miniature', get_template_directory_uri() . '/js/référence.js');
+    
     wp_enqueue_script('charger-plus', get_template_directory_uri() . '/js/charger-plus.js');
 
       // Localiser l'URL AJAX en utilisant wp_add_inline_script
       $script = 'var ajaxurl = "' . admin_url('admin-ajax.php') . '";';
       wp_add_inline_script('charger-plus', $script);
-      
+
+    // filtre-photo
+    wp_enqueue_script('filtre-photo', get_template_directory_uri() . '/js/filtre-photo.js');
+    
+      // Localiser l'URL AJAX en utilisant wp_add_inline_script
+      $script = 'var ajaxurl = "' . admin_url('admin-ajax.php') . '";';
+      wp_add_inline_script('filtre-photo', $script);
+
+
     // Styles CSS
     wp_enqueue_style('nathaliemota-style', get_stylesheet_uri());
     wp_enqueue_style('main-style', get_template_directory_uri() . '/scss/main.css', [], '1.0');
@@ -111,3 +119,79 @@ function load_more_photos() {
 // Ajouter les actions AJAX
 add_action('wp_ajax_load_more_photos', 'load_more_photos');
 add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
+
+function load_filtered_photos() {
+    // Récupérer les paramètres envoyés via AJAX
+    $category = isset($_POST['category']) ? $_POST['category'] : '';
+    $format = isset($_POST['format']) ? $_POST['format'] : '';
+    $sort = isset($_POST['sort']) ? $_POST['sort'] : 'date_desc';
+    $offset = isset($_POST['offset']) ? intval($_POST['offset']) : 0;
+    $posts_per_page = isset($_POST['posts_per_page']) ? intval($_POST['posts_per_page']) : 8;
+
+    // Arguments pour la requête WP_Query
+    $args = array(
+        'post_type' => 'photos',
+        'posts_per_page' => $posts_per_page,
+        'offset' => $offset,
+        'orderby' => $sort === 'date_asc' ? 'date' : 'date',
+        'order' => $sort === 'date_asc' ? 'ASC' : 'DESC',
+        'tax_query' => array(),
+    );
+
+    // Filtrer par catégorie
+    if ($category) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'categorie',
+            'field' => 'slug',
+            'terms' => $category,
+            'operator' => 'IN',
+        );
+    }
+
+    // Filtrer par format
+    if ($format) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'format',
+            'field' => 'slug',
+            'terms' => $format,
+            'operator' => 'IN',
+        );
+    }
+
+    // Exécuter la requête avec les arguments filtrés
+    $photo_query = new WP_Query($args);
+
+    // Si des photos sont trouvées
+    if ($photo_query->have_posts()) :
+        while ($photo_query->have_posts()) : $photo_query->the_post();
+            ?>
+            <div class="photo-item">
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail('large', array('class' => 'photo-full')); ?>
+                </a>
+                <div class="photo-overlay">
+                    <a href="<?php the_permalink(); ?>" class="icon eye">
+                        <img src="http://nathaliemota.local/wp-content/uploads/2024/11/eye.png" alt="Eye Icon">
+                    </a>
+                    <a href="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" 
+                       data-lightbox="image-<?php the_ID(); ?>" class="icon fullscreen">
+                        <img src="http://nathaliemota.local/wp-content/uploads/2024/11/Icon_fullscreen.png" alt="Icône plein écran">
+                    </a>
+                </div>
+            </div>
+            <?php
+        endwhile;
+    else :
+        echo 'Aucune photo ne correspond à vos critères.';
+    endif;
+
+    // Réinitialiser les données de la requête
+    wp_reset_postdata();
+
+    // Fin de la requête AJAX
+    wp_die();
+}
+
+// Actions AJAX pour les utilisateurs connectés et non connectés
+add_action('wp_ajax_load_filtered_photos', 'load_filtered_photos');
+add_action('wp_ajax_nopriv_load_filtered_photos', 'load_filtered_photos');
