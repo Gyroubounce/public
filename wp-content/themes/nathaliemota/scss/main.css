@@ -24,6 +24,132 @@
   font-weight: bold;
   font-style: italic;
 }
+/* Poppins Black */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+/* Poppins Black Italic */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+/* Poppins Bold */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+/* Poppins Bold Italic */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+/* Poppins Extrabold */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+/* Poppins Extrabold Italic */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-ExtraboldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+/* Poppins Medium */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+/* Poppins Medium Italic */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+/* Poppins Light */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+/* Poppins Light Italic */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+/* Poppins Extralight */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+/* Poppins Extralight Italic */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-ExtralightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+/* Poppins Thin */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+/* Poppins Thin Italic */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+/* Poppins Semibold */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+/* Poppins Semibold Italic */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-SemiboldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+/* Poppins Regular */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Poppins Regular Italic */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-RegularItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
 * {
   margin: 0;
   padding: 0;
@@ -587,10 +713,191 @@ p {
 }
 .filters .filter-group select,
 .filters .filter-sort select {
+  width: 240px;
+  height: 40px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 12px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px; /* Coins arrondis */
+  background-color: white;
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto; /* Supprime la flèche par défaut */
+  outline: none; /* Enlève le contour par défaut */
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.filters .filter-group select:focus,
+.filters .filter-sort select:focus {
+  border-color: #215AFF; /* Contour bleu si focus */
+}
+.filters .filter-group select.active,
+.filters .filter-sort select.active {
+  border-color: #215AFF; /* Si "Catégories" est actif */
+}
+.filters .filter-group select option,
+.filters .filter-sort select option {
+  background-color: white;
+  border: none;
+  padding: 10px;
+}
+.filters .filter-group select option:hover,
+.filters .filter-sort select option:hover {
+  background-color: #FFD6D6 !important; /* Fond rose au survol */
+}
+.filters .filter-group select option:active,
+.filters .filter-sort select option:active {
+  background-color: #FE5858 !important; /* Fond rouge au clic */
+}
+.filters .filter-group select option:checked,
+.filters .filter-sort select option:checked {
+  background-color: #E00000 !important; /* Fond rouge vif pour sélection */
+  color: white;
+}
+
+/* Appliquer un style personnalisé lorsque le menu est ouvert */
+/* Appliquer la police Poppins à l'ensemble du select2 */
+.select2-container {
+  font-family: "Poppins", sans-serif;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: #000000;
+}
+
+/* Styles pour la sélection */
+.select2-container .select2-selection {
+  height: 40px; /* Hauteur du cadre de sélection */
+}
+
+/* Styles pour le cadre de sélection quand il est actif (focalisé) */
+.select2-container--default .select2-selection--single {
+  background-color: #ffffff; /* Fond blanc */
+  border: 1px solid #000000; /* Bordure noire */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 0 10px; /* Espacement horizontal autour du texte */
+  position: relative; /* Positionnement relatif pour la flèche */
+}
+
+/* Centrer le texte à l'intérieur du cadre */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 40px; /* Aligner le texte verticalement */
+}
+
+/* Changer la couleur de la bordure lorsque la sélection est active */
+.select2-container--default .select2-selection--single:focus {
+  border-color: #215AFF; /* Bordure bleue quand actif */
+}
+
+/* Centrer la flèche (down arrow) */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 26px;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  width: 20px;
+}
+
+/* Cibler la flèche de sélection (flèche vers le bas) */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  font-family: "Montserrat", sans-serif; /* Utilisez une police générique, si nécessaire */
+  font-size: 24px; /* Taille de la flèche */
+  color: #000000; /* Couleur de la flèche */
+}
+
+/* Style par défaut pour la flèche (chevron droit) */
+.select2-container--default .select2-selection--single .select2-selection__arrow:before {
+  font-size: 16px; /* Taille de la flèche */
+  color: #000000; /* Couleur de la flèche */
+  display: inline-block;
+  margin-left: -4px;
+  margin-top: -2px;
+}
+
+/* Style pour la flèche lorsque la boîte est ouverte (chevron gauche) */
+.select2-container--default .select2-selection--single.select2-selection--open .select2-selection__arrow:before {
+  font-size: 16px; /* Taille de la flèche */
+  color: #000000; /* Couleur de la flèche */
+  display: inline-block;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+  font-size: 16px; /* Taille de la flèche */
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+  font-size: 16px; /* Taille de la flèche */
+}
+
+.select2-results__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Masquer le bouton de suppression dans Select2 */
+.select2-selection__clear {
+  display: none !important;
+}
+
+.select2-results__option {
+  background-color: transparent !important; /* Aucun fond au démarrage */
+  color: #000000 !important; /* Texte noir par défaut */
+}
+
+/* Survol de l'option */
+.select2-results__option--highlighted {
+  background-color: #FFD6D6 !important; /* Fond rose clair au survol */
+  color: #000000 !important; /* Texte noir au survol */
+}
+
+/* Option active (clic) */
+.select2-results__option:active {
+  background-color: #FE5858 !important; /* Fond rouge clair au clic */
+  color: #000000 !important; /* Texte noir au clic */
+}
+
+/* Option sélectionnée après que l'utilisateur a cliqué */
+.select2-results__option[aria-selected=true]:not(:hover):not(:active) {
+  background-color: #E00000 !important; /* Fond rouge vif pour l'option sélectionnée */
+  color: #ffffff !important; /* Texte blanc pour l'option sélectionnée */
+}
+
+/* Désactiver l'effet de survol pour l'option sélectionnée */
+.select2-results__option[aria-selected=true]:not(:hover) {
+  background-color: #E00000 !important; /* Fond rouge vif pour l'option sélectionnée */
+  color: #ffffff !important; /* Texte blanc pour l'option sélectionnée */
+}
+
+/* Ne pas appliquer de fond rouge au démarrage (au chargement de la page) */
+.select2-results__option:not([aria-selected=true]) {
+  background-color: transparent !important; /* Pas de fond au démarrage */
+  color: #000000 !important; /* Texte noir pour toutes les autres options */
+}
+
+.select2-search input {
+  display: none;
 }
 
 .photo-grid {
@@ -669,15 +976,15 @@ p {
   text-align: center;
   margin: 20px 0;
 }
-.load-more-container #load-more-photos-btn {
+.load-more-container #load-more {
   padding: 20px 100px;
   background-color: #D8D8D8;
-  color: #fff;
+  color: #000000;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-.load-more-container #load-more-photos-btn:hover {
+.load-more-container #load-more:hover {
   background-color: #383838;
 }
 
@@ -694,7 +1001,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Fond noir transparent */
+  background-color: rgba(0, 0, 0, 0.8); /* Fond noir transparent */
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -735,20 +1042,25 @@ p {
 /* Contenu principal de la Lightbox (photo et navigation) */
 .lightbox-main {
   position: relative;
-  margin-left: 40px;
-  margin-right: 40px;
-  max-width: 100%;
-  max-height: 80vh;
   margin-top: 80px;
+}
+
+/* Conteneur de la photo avec taille fixe */
+.lightbox-photo-containt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw; /* Largeur fixe du conteneur */
+  height: 80vh; /* Hauteur fixe du conteneur */
+  margin: 0 auto;
 }
 
 /* Photo */
 .lightbox-photo {
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
+  max-width: 100%;
+  max-height: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+     object-fit: contain; /* L'image sera contenue dans les dimensions du conteneur */
 }
 
 /* Navigation (précédente et suivante) */
@@ -763,16 +1075,20 @@ p {
 
 .lightbox-prev,
 .lightbox-next {
-  font-size: 40px;
+  display: flex;
+  align-items: center;
   color: white;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  margin: 100px;
 }
 
-.lightbox-info {
-  display: flex;
+.nav-arrow {
+  font-size: 36px; /* Taille de la flèche */
+}
+
+.nav-text {
+  font-size: 16px; /* Taille du texte */
+  padding: 10px;
 }
 
 /* Pied de page avec référence et catégorie */
@@ -781,9 +1097,9 @@ p {
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 200px;
+  justify-content: space-evenly;
   color: white;
+  box-sizing: border-box;
 }
 
 /* Styles supplémentaires pour rendre l'interaction plus fluide */

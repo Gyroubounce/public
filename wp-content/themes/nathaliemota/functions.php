@@ -17,12 +17,14 @@ function nathaliemota_enqueue_assets() {
     wp_enqueue_script('custom-modal-script', get_template_directory_uri() . '/js/script.js');
     wp_enqueue_script('photo-navigation', get_template_directory_uri() . '/js/photo-navigation.js');
  
-    
-    wp_enqueue_script('charger-plus', get_template_directory_uri() . '/js/charger-plus.js');
+    if(is_front_page()) {
+        wp_enqueue_script('charger-plus', get_template_directory_uri() . '/js/charger-plus.js');
 
-      // Localiser l'URL AJAX en utilisant wp_add_inline_script
-      $script = 'var ajaxurl = "' . admin_url('admin-ajax.php') . '";';
-      wp_add_inline_script('charger-plus', $script);
+        // Localiser l'URL AJAX en utilisant wp_add_inline_script
+        $script = 'var ajaxurl = "' . admin_url('admin-ajax.php') . '";';
+        wp_add_inline_script('charger-plus', $script);
+  
+    };
 
     // filtre-photo
     wp_enqueue_script('filtre-photo', get_template_directory_uri() . '/js/filtre-photo.js');
@@ -32,6 +34,13 @@ function nathaliemota_enqueue_assets() {
       wp_add_inline_script('filtre-photo', $script);
 
       wp_enqueue_script('moodal-screen', get_template_directory_uri() . '/js/modal-screen.js');
+
+    // Charger le CSS de Select2
+    wp_enqueue_style('select2-css', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css');
+    // Charger le JS de Select2
+    wp_enqueue_script('select2-js', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js');
+    // Charger votre script de personnalisation
+    wp_enqueue_script('custom-select2-init', get_template_directory_uri() . '/js/select2-init.js');
 
     // Styles CSS
     wp_enqueue_style('nathaliemota-style', get_stylesheet_uri());

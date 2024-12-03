@@ -7,27 +7,26 @@
 
             <!-- Zone de fermeture -->
             <span class="lightbox-close" id="close-lightbox">&#10005;</span>
-
-        </div> 
+        </div>
         <div class="lightbox-main">
-            <!-- Photo -->
-            <img id="lightbox-photo" src="" alt="Photo" class="lightbox-photo">
-
-            <!-- Navigation (précédente et suivante) -->
-            <div class="lightbox-nav">
-                <span class="lightbox-prev" id="lightbox-prev">&#10094;</span>
-                <span class="lightbox-next" id="lightbox-next">&#10095;</span>
+            <!-- Conteneur de la photo -->
+            <div class="lightbox-photo-containt">
+                <img id="lightbox-photo" src="" alt="Photo" class="lightbox-photo">
             </div>
-                 <!-- Zone d'informations -->
-            <div class="lightbox-info">
-                <!-- Référence et Catégorie -->
-                <div class="lightbox-footer">
-                    <span id="lightbox-reference" class="lightbox-reference"></span>
-                    <span id="lightbox-category" class="lightbox-category"></span>
-                </div>
-
+            <!-- Référence et Catégorie -->
+            <div class="lightbox-footer">
+                <span id="lightbox-reference" class="lightbox-reference">Référence Exemple</span>
+                <span id="lightbox-category" class="lightbox-category">Catégorie Exemple</span>
             </div>
         </div>
-
+        <!-- Navigation (précédente et suivante) -->
+        <div class="lightbox-nav">
+            <span class="lightbox-prev" id="lightbox-prev">
+                <span class="nav-arrow">&#8592;</span> <span class="nav-text">Précédente</span>
+            </span>
+            <span class="lightbox-next" id="lightbox-next">
+                <span class="nav-text">Suivante</span> <span class="nav-arrow">&#8594;</span>
+            </span>
+        </div>
     </div>
 </div>

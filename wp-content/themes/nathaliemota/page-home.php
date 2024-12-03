@@ -8,8 +8,8 @@ get_header();
 <div class="filters">
     <div class="filter-group">
         <!-- Menu déroulant Catégories -->
-        <select id="filter-category">
-            <option value="">Toutes les catégories</option>
+        <select id="filter-category" class="select2">
+            <option value="">Catégories</option>
             <?php
             $categories = get_terms(array('taxonomy' => 'categorie', 'hide_empty' => true));
             foreach ($categories as $category) {
@@ -19,8 +19,8 @@ get_header();
         </select>
 
         <!-- Menu déroulant Formats -->
-        <select id="filter-format">
-            <option value="">Tous les formats</option>
+        <select id="filter-format" class="select2">
+            <option value="">Formats</option>
             <?php
             $formats = get_terms(array('taxonomy' => 'format', 'hide_empty' => true));
             foreach ($formats as $format) {
@@ -32,9 +32,10 @@ get_header();
 
     <!-- Menu déroulant Trier par -->
     <div class="filter-sort">
-        <select id="filter-sort">
-            <option value="date_desc">Trier par : Plus récentes</option>
-            <option value="date_asc">Trier par : Plus anciennes</option>
+        <select id="filter-sort" class="select2">
+            <option value="">Trier par</option>
+            <option value="date_desc">Plus récentes</option>
+            <option value="date_asc">Plus anciennes</option>
         </select>
     </div>
 </div>
