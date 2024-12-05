@@ -150,6 +150,7 @@
   font-weight: normal;
   font-style: italic;
 }
+/* Variables de couleurs */
 * {
   margin: 0;
   padding: 0;
@@ -209,238 +210,327 @@ p {
     font-size: 14px;
   }
 }
-/* Conteneur du header */
-.container {
-  display: flex;
-  justify-content: space-between; /* Aligne les éléments à gauche et à droite */
-  align-items: center; /* Centre les éléments verticalement */
-  width: 100%; /* Conteneur prend toute la largeur de l'écran */
-  max-width: 1440px; /* Largeur maximale pour les grands écrans */
-  margin: 0 auto; /* Centre le conteneur horizontalement */
-  height: 80px; /* Hauteur du conteneur */
-}
-
-.logo {
-  margin-left: 0;
-}
-
-/* Menu principal */
-.main-menu {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-.main-menu a {
-  text-decoration: none;
-  color: #333;
-  margin-left: 40px;
-  transition: color 0.3s ease;
-}
-
-/* Lien actif avec aria-current */
-.main-menu a[aria-current=page] {
-  color: #0073e6; /* Couleur pour la page active */
-  font-weight: bold;
-}
-
-/* Effet au survol */
-.main-menu a:hover {
-  color: #0056b3;
-}
-
-/* Conteneur pour l'image d'en-tête */
 .header-image {
-  width: 100%; /* Prend toute la largeur */
-  height: 85vh; /* Hauteur du bandeau (50% de la hauteur de la fenêtre) */
+  width: 100%;
+  height: 85vh;
   overflow: hidden;
-  position: relative; /* Permet des ajustements supplémentaires */
+  position: relative;
 }
-
-/* Image à l'intérieur du conteneur */
 .header-image img {
-  width: 100%; /* S'adapte à la largeur du conteneur */
-  height: 100%; /* Remplit le conteneur en hauteur */
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
-     object-fit: cover; /* Coupe ou étire l'image pour remplir le conteneur sans déformer */
+     object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-/* Menu mobile - pour adapter si nécessaire */
-@media (max-width: 768px) {
-  .main-menu {
-    flex-direction: column;
-    align-items: center;
-  }
-  .main-menu li {
-    margin: 10px 0;
-  }
-  /* Ajoutez un bouton de menu mobile si nécessaire */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 80px;
 }
-/* Centrer le footer */
+.container .logo {
+  margin-left: 0;
+}
+.container nav.menu-header-container {
+  display: flex;
+  justify-content: center;
+}
+.container nav.menu-header-container ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+.container nav.menu-header-container ul li {
+  margin-left: 40px;
+}
+.container nav.menu-header-container ul li a {
+  text-decoration: none;
+  color: #000000;
+  transition: color 0.6s ease;
+}
+.container nav.menu-header-container ul li a[aria-current=page] {
+  font-weight: bold;
+}
+.container nav.menu-header-container ul li a:hover {
+  font-weight: 600;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 40px;
+  z-index: 100;
+}
+.burger-menu .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+.burger-menu.active .line:nth-child(1) {
+  transform: rotate(45deg) translateY(16px);
+}
+.burger-menu.active .line:nth-child(2) {
+  opacity: 0;
+}
+.burger-menu.active .line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-16px);
+}
+
+/* Bloquer le défilement de la page lorsque le menu est actif */
+body.menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .container .logo {
+    margin-left: 40px;
+  }
+  .burger-menu {
+    display: flex;
+  }
+  .menu-header-container {
+    position: fixed; /* Pour activer le z-index */
+    z-index: 100;
+    top: 80px; /* S'assure que le menu est toujours en haut de la page */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre, légèrement transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* Cacher le menu par défaut */
+    opacity: 0; /* Menu invisible par défaut */
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Transition sur l'opacité */
+    /* Bloque le scroll de la page quand le menu est ouvert */
+  }
+  .menu-header-container.active {
+    visibility: visible; /* Rendre le menu visible */
+    opacity: 1; /* Menu visible */
+    transition: opacity 0.3s ease; /* Transition de l'opacité */
+    overflow: hidden; /* Empêche le scroll */
+  }
+  .menu-header-container .main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer les éléments dans le menu */
+    justify-content: center;
+    padding: 20px;
+    background-color: rgb(255, 0, 0); /* Fond rouge */
+    width: 100%;
+    height: 100%; /* Remplir tout l'écran */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .menu-header-container .main-menu li {
+    margin-bottom: 15px !important;
+  }
+  .menu-header-container .main-menu a {
+    color: #fff !important; /* Texte en blanc */
+    font-size: 44px; /* Taille des liens */
+    text-align: center; /* Texte centré */
+    text-decoration: none; /* Enlève les soulignements */
+  }
+  .menu-header-container .main-menu a:hover {
+    color: #ddd; /* Changer la couleur au survol */
+  }
+  .nav.menu-header-container {
+    display: none;
+  }
+}
+/* Styles pour le footer */
 .main-footer {
   width: 100%;
-  color: #fff; /* Couleur du texte */
-  padding: 10px 0; /* Espacement autour du contenu du footer */
+  color: #fff;
+  padding: 10px 0;
   border-top: 1px solid black;
 }
-
-.footer-container {
-  max-width: 1440px; /* Largeur maximale du footer */
-  margin: 0 auto; /* Centre horizontalement */
-  padding: 0px; /* Espacement interne si nécessaire */
+.main-footer .footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
   display: flex;
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement si le footer a plus de contenu */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-
-.footer-menu {
+.main-footer .footer-menu {
   list-style: none;
   display: flex;
   justify-content: center;
   padding: 0;
   gap: 100px;
 }
-
-.footer-menu li {
-  margin: 0px; /* Espacement entre les éléments du menu */
+.main-footer .footer-menu li {
+  margin: 0;
 }
-
-.footer-menu a {
+.main-footer .footer-menu a {
   text-decoration: none;
   color: #000000;
-  font-size: 14px;
+  font-size: 16px;
   transition: color 0.3s ease;
 }
-
-.footer-menu a:hover {
-  color: #0073e6; /* Change la couleur au survol */
+.main-footer .footer-menu a:hover {
+  font-weight: 900;
 }
 
-/* Masquer la modale par défaut */
+@media (max-width: 768px) {
+  .main-footer .footer-menu {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    gap: 30px;
+  }
+}
 .modal-overlay {
-  display: none; /* Initialement cachée */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Ombre de fond */
+  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Placer la modale au-dessus de tout autre contenu */
-  opacity: 0; /* Commence invisible */
-  transition: opacity 0.3s ease; /* Transition pour l'animation d'apparition */
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-
-/* Quand la classe 'open' est ajoutée, la modale devient visible */
 .modal-overlay.open {
-  display: flex; /* Utiliser flexbox pour centrer le contenu */
-  opacity: 1; /* La modale devient visible */
+  display: flex;
+  opacity: 1;
 }
-
-/* Contenu de la modale */
-.modal-content {
+.modal-overlay .modal-content {
   background: white;
   max-width: 600px;
   width: 100%;
   position: relative;
 }
-
-/* Bouton de fermeture */
-.modal-close {
+.modal-overlay .modal-content .modal-close {
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 30px;
   cursor: pointer;
 }
-
-.modal-title {
+.modal-overlay .modal-content .modal-title {
   background-image: url("/wp-content/themes/nathaliemota/assets/images/contact-header.png");
-  background-size: cover; /* ajuste l'image à la taille de l'élément */
-  background-position: center; /* centre l'image */
-  height: 100px; /* ajustez la hauteur selon vos besoins */
-  width: 100%; /* ajustez la largeur selon vos besoins */
-  color: transparent; /* rend le texte transparent si vous ne voulez plus qu'il soit visible */
-  text-align: center; /* centre le contenu, si nécessaire */
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  width: 100%;
+  color: transparent;
+  text-align: center;
 }
 
-/*formulaire de contact*/
-/* Style global pour le formulaire de contact */
 #wpcf7-f45-o1 {
   max-width: 350px;
-  margin: 20px auto 0px auto;
+  margin: 20px auto 0;
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* Titre du formulaire */
 #wpcf7-f45-o1 label {
-  font-size: 16px;
-  color: #333;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  color: #313144;
   margin-bottom: 10px;
   display: block;
   text-align: left;
 }
-
-/* Style des champs de texte */
 #wpcf7-f45-o1 input[type=text],
 #wpcf7-f45-o1 input[type=email],
 #wpcf7-f45-o1 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 10px 0;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #C4C4C4;
   border-radius: 8px;
   margin-bottom: 10px;
   margin-top: 5px;
 }
-
-/* Style des champs de texte au focus */
 #wpcf7-f45-o1 input[type=text]:focus,
 #wpcf7-f45-o1 input[type=email]:focus,
 #wpcf7-f45-o1 textarea:focus {
   border-color: #007bff;
   outline: none;
 }
-
-/* Bouton de soumission */
 #wpcf7-f45-o1 .wpcf7-submit {
   background-color: #D8D8D8;
-  color: white;
+  color: #000000;
   padding: 10px 20px;
   height: 50px;
   width: 350px;
-  font-size: 16px;
+  font-size: 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition ajoutée */
 }
-
-/* Bouton de soumission au survol */
 #wpcf7-f45-o1 .wpcf7-submit:hover {
-  background-color: #444444;
+  background-color: #000000;
+  color: white;
 }
-
-/* Message d'erreur (si nécessaire) */
-.wpcf7-response-output {
-  color: #ff4d4d;
-  font-size: 14px;
+#wpcf7-f45-o1 .wpcf7-response-output {
+  color: red;
+  font-size: 12px;
   margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 300px !important;
+  }
+  #wpcf7-f45-o1 {
+    max-width: 290px !important;
+  }
+  .wpcf7-submit {
+    width: 260px !important;
+  }
+  input[type=text],
+  input[type=email],
+  textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 12px;
+  }
+  .modal-content .modal-title {
+    background-image: url("/wp-content/themes/nathaliemota/assets/images/contact-header.png");
+    background-size: cover;
+    background-position: center;
+    height: 60px !important;
+    width: 100%;
+    color: transparent;
+    text-align: center;
+  }
+}
 /* Définition du contenu de la page */
 .photo {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 250px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .photo-contenair {
@@ -452,7 +542,6 @@ p {
 
 /* Zone supérieur */
 .photo-content-wrapper {
-  padding: 20px;
   width: 100%;
 }
 
@@ -472,13 +561,14 @@ p {
   justify-content: end;
   padding-bottom: 20px;
   background: #f9f9f9;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #000000;
   width: 50%;
+  text-transform: uppercase;
 }
 
 .photo-info h2 {
   margin-bottom: 15px;
-  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .photo-info ul {
@@ -511,7 +601,6 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 20px;
 }
 
 .photo-interactions {
@@ -532,18 +621,21 @@ p {
 /* Bouton Contact */
 .contact-link.btn {
   display: inline-block;
-  padding: 15px 100px;
+  width: 260px;
+  padding: 15px 15px;
   color: #000000;
   background-color: #D8D8D8;
   text-decoration: none;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition ajoutée */
+  text-align: center;
 }
 
 .contact-link.btn:hover {
-  background-color: #444;
+  background-color: #000000;
+  color: white;
 }
 
 /* Conteneur navigation */
@@ -552,6 +644,7 @@ p {
   flex-direction: column; /* Dispose les éléments en colonne */
   align-items: end; /* Centre les éléments horizontalement */
   width: 50%;
+  margin-top: 10px;
 }
 
 .thumbnail-container {
@@ -590,20 +683,15 @@ p {
 
 /* Englobe la section pour la centrer */
 .related-photos-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  margin-bottom: 100px;
+  padding: 0 0px;
+  margin-bottom: 80px;
+  margin-top: 0px;
 }
 
 /* Section des photos liées */
-.related-photos {
-  margin-top: 50px;
-}
-
 .propose {
   margin-bottom: 50px;
+  text-transform: uppercase;
 }
 
 /* Grille pour les deux photos */
@@ -647,12 +735,6 @@ p {
   opacity: 1;
 }
 
-.icon {
-  font-size: 2rem; /* Taille des icônes */
-  color: white; /* Couleur des icônes */
-  text-decoration: none;
-}
-
 /* Icône 'eye' centrée */
 .related-overlay .eye {
   position: absolute;
@@ -665,7 +747,11 @@ p {
 .related-overlay .fullscreen {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: -20px;
+}
+
+.related-overlay .fullscreen img {
+  width: 50%;
 }
 
 /* Texte en bas (Référence à gauche, Catégorie à droite) */
@@ -687,6 +773,91 @@ p {
   margin: 10px;
 }
 
+@media (max-width: 768px) {
+  /* Conteneur global */
+  .photo {
+    margin: 0 0px; /* Réduire les marges sur mobile */
+  }
+  .photo-contenair {
+    margin-top: 0;
+    padding: 0 50px;
+  }
+  .photo-content-wrapper {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  /* Zone principale */
+  .photo-main {
+    flex-direction: column-reverse; /* Empiler les éléments */
+    align-items: center; /* Centrer le contenu */
+    gap: 20px; /* Espacement entre les sections */
+  }
+  /* Informations de gauche */
+  .photo-info {
+    padding: 0px; /* Réduire les marges internes */
+    text-align: left; /* Centrer le texte */
+    border: none;
+  }
+  /* Photo affichée à droite */
+  .photo-display {
+    justify-content: center; /* Centrer l'image */
+    margin-top: 20px; /* Ajouter un espacement avec la section précédente */
+  }
+  .photo-display img.photo-full {
+    max-height: 50vh;
+  }
+  /* Section interactions */
+  .photo-interactions-wrapper {
+    padding: 0 0px; /* Réduire les marges internes */
+  }
+  .photo-interactions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo-interactions .contact {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+    border-top: 1px solid #000000;
+  }
+  .photo-interactions .contact .contact-text {
+    margin-right: 40px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  .photo-interactions .contact .contact-text p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .photo-interactions .contact .contact-text .contact-btn {
+    width: 100%;
+  }
+  .photo-interactions .photo-navigation {
+    display: none;
+  }
+  .propose {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  /* Photos liées */
+  .related-photos {
+    margin-top: 30px; /* Espacement avec la section précédente */
+  }
+  .related-grid {
+    flex-direction: column; /* Empiler les deux photos */
+    gap: 20px; /* Espacement entre les éléments */
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    width: 100vw;
+    align-items: center;
+  }
+  .related-item img.photo-full {
+    max-height: 40vh;
+  }
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -718,22 +889,22 @@ p {
   padding: 10px;
   font-size: 12px;
   border: 1px solid #ccc;
-  border-radius: 10px; /* Coins arrondis */
+  border-radius: 10px;
   background-color: white;
   -webkit-appearance: auto;
      -moz-appearance: auto;
-          appearance: auto; /* Supprime la flèche par défaut */
-  outline: none; /* Enlève le contour par défaut */
+          appearance: auto;
+  outline: none;
   cursor: pointer;
   text-transform: uppercase;
 }
 .filters .filter-group select:focus,
 .filters .filter-sort select:focus {
-  border-color: #215AFF; /* Contour bleu si focus */
+  border-color: #215aff;
 }
 .filters .filter-group select.active,
 .filters .filter-sort select.active {
-  border-color: #215AFF; /* Si "Catégories" est actif */
+  border-color: #215aff;
 }
 .filters .filter-group select option,
 .filters .filter-sort select option {
@@ -743,82 +914,83 @@ p {
 }
 .filters .filter-group select option:hover,
 .filters .filter-sort select option:hover {
-  background-color: #FFD6D6 !important; /* Fond rose au survol */
+  background-color: #FFD6D6 !important;
 }
 .filters .filter-group select option:active,
 .filters .filter-sort select option:active {
-  background-color: #FE5858 !important; /* Fond rouge au clic */
+  background-color: #FE5858 !important;
 }
 .filters .filter-group select option:checked,
 .filters .filter-sort select option:checked {
-  background-color: #E00000 !important; /* Fond rouge vif pour sélection */
+  background-color: #E00000 !important;
   color: white;
 }
 
-/* Appliquer un style personnalisé lorsque le menu est ouvert */
-/* Appliquer la police Poppins à l'ensemble du select2 */
 .select2-container {
   font-family: "Poppins", sans-serif;
 }
-
-.select2-container--default .select2-selection--single .select2-selection__placeholder {
-  color: #000000;
-}
-
-/* Styles pour la sélection */
-.select2-container .select2-selection {
-  height: 40px; /* Hauteur du cadre de sélection */
-}
-
-/* Styles pour le cadre de sélection quand il est actif (focalisé) */
 .select2-container--default .select2-selection--single {
-  background-color: #ffffff; /* Fond blanc */
-  border: 1px solid #000000; /* Bordure noire */
-  border-radius: 10px; /* Coins arrondis */
-  padding: 0 10px; /* Espacement horizontal autour du texte */
-  position: relative; /* Positionnement relatif pour la flèche */
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 0 10px;
+  position: relative;
 }
-
-/* Centrer le texte à l'intérieur du cadre */
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-  line-height: 40px; /* Aligner le texte verticalement */
+  line-height: 40px;
 }
-
-/* Changer la couleur de la bordure lorsque la sélection est active */
 .select2-container--default .select2-selection--single:focus {
-  border-color: #215AFF; /* Bordure bleue quand actif */
+  border-color: #215aff;
 }
-
-/* Centrer la flèche (down arrow) */
 .select2-container--default .select2-selection--single .select2-selection__arrow {
   height: 26px;
   position: absolute;
   top: 5px;
   right: 20px;
   width: 20px;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: #000000;
 }
-
-/* Cibler la flèche de sélection (flèche vers le bas) */
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  font-family: "Montserrat", sans-serif; /* Utilisez une police générique, si nécessaire */
-  font-size: 24px; /* Taille de la flèche */
-  color: #000000; /* Couleur de la flèche */
-}
-
-/* Style par défaut pour la flèche (chevron droit) */
-.select2-container--default .select2-selection--single .select2-selection__arrow:before {
-  font-size: 16px; /* Taille de la flèche */
-  color: #000000; /* Couleur de la flèche */
+.select2-container--default .select2-selection--single .select2-selection__arrow::before {
+  font-size: 16px;
+  color: #000000;
   display: inline-block;
   margin-left: -4px;
   margin-top: -2px;
 }
-
-/* Style pour la flèche lorsque la boîte est ouverte (chevron gauche) */
-.select2-container--default .select2-selection--single.select2-selection--open .select2-selection__arrow:before {
-  font-size: 16px; /* Taille de la flèche */
-  color: #000000; /* Couleur de la flèche */
+.select2-container--open .select2-selection__arrow::before {
+  font-size: 16px;
+  color: #000000;
   display: inline-block;
+}
+.select2-container .select2-results__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.select2-container .select2-results__options .select2-results__option {
+  background-color: transparent !important;
+  color: #000000 !important;
+}
+.select2-container .select2-results__options .select2-results__option:hover {
+  background-color: #ffd6d6 !important;
+}
+.select2-container .select2-results__options .select2-results__option:active {
+  background-color: #fe5858 !important;
+}
+.select2-container .select2-results__options .select2-results__option[aria-selected=true]:not(:hover) {
+  background-color: #e00000 !important;
+  color: #ffffff !important;
+}
+.select2-container .select2-search input {
+  display: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #000000;
 }
 
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
@@ -849,11 +1021,8 @@ p {
   font-size: 16px; /* Taille de la flèche */
 }
 
-.select2-results__options {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: none;
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: #000000;
 }
 
 /* Masquer le bouton de suppression dans Select2 */
@@ -861,59 +1030,21 @@ p {
   display: none !important;
 }
 
-.select2-results__option {
-  background-color: transparent !important; /* Aucun fond au démarrage */
-  color: #000000 !important; /* Texte noir par défaut */
-}
-
-/* Survol de l'option */
-.select2-results__option--highlighted {
-  background-color: #FFD6D6 !important; /* Fond rose clair au survol */
-  color: #000000 !important; /* Texte noir au survol */
-}
-
-/* Option active (clic) */
-.select2-results__option:active {
-  background-color: #FE5858 !important; /* Fond rouge clair au clic */
-  color: #000000 !important; /* Texte noir au clic */
-}
-
-/* Option sélectionnée après que l'utilisateur a cliqué */
-.select2-results__option[aria-selected=true]:not(:hover):not(:active) {
-  background-color: #E00000 !important; /* Fond rouge vif pour l'option sélectionnée */
-  color: #ffffff !important; /* Texte blanc pour l'option sélectionnée */
-}
-
-/* Désactiver l'effet de survol pour l'option sélectionnée */
-.select2-results__option[aria-selected=true]:not(:hover) {
-  background-color: #E00000 !important; /* Fond rouge vif pour l'option sélectionnée */
-  color: #ffffff !important; /* Texte blanc pour l'option sélectionnée */
-}
-
-/* Ne pas appliquer de fond rouge au démarrage (au chargement de la page) */
-.select2-results__option:not([aria-selected=true]) {
-  background-color: transparent !important; /* Pas de fond au démarrage */
-  color: #000000 !important; /* Texte noir pour toutes les autres options */
-}
-
-.select2-search input {
-  display: none;
-}
-
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-  gap: 20px; /* Espace entre les éléments */
-  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   max-width: 1440px;
   margin: 20px auto;
 }
 .photo-grid .photo-item {
-  position: relative; /* Nécessaire pour positionner l'overlay par rapport à l'image */
-  overflow: hidden; /* Empêche le débordement des éléments */
+  position: relative;
+  overflow: hidden;
+  max-width: 100vw;
+  max-height: 50vh;
 }
 .photo-grid .photo-item a {
-  display: block; /* Lien comme un bloc pour que l'image occupe toute la zone */
+  display: block;
 }
 .photo-grid .photo-item .photo-full {
   width: 100%;
@@ -921,10 +1052,10 @@ p {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
-  transition: transform 0.3s ease; /* Effet de zoom lors du survol */
+  transition: transform 0.3s ease;
 }
-.photo-grid .photo-item:hover .photo-full {
-  transform: scale(1.05); /* Zoom léger au survol */
+.photo-grid .photo-item .photo-full:hover {
+  transform: scale(1.05);
 }
 .photo-grid .photo-item .photo-overlay {
   position: absolute;
@@ -932,28 +1063,29 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour l'overlay */
+  background: rgba(0, 0, 0, 0.6);
   opacity: 0;
-  visibility: hidden;
+  visibility: visible;
   transition: opacity 0.3s ease, visibility 0s linear 0.3s;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  /* Icône 'eye' au centre */
-  /* Icône 'fullscreen' en haut à droite */
 }
 .photo-grid .photo-item .photo-overlay .eye {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centrer l'élément */
+  transform: translate(-50%, -50%);
 }
 .photo-grid .photo-item .photo-overlay .fullscreen {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: -10px;
+}
+.photo-grid .photo-item .photo-overlay .fullscreen img {
+  width: 50%;
 }
 .photo-grid .photo-item .photo-overlay .text-filtre {
   color: white;
@@ -966,7 +1098,7 @@ p {
   justify-content: space-between;
   width: 100%;
 }
-.photo-grid .photo-item:hover .photo-overlay {
+.photo-grid .photo-item .photo-overlay:hover {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease, visibility 0s;
@@ -978,19 +1110,46 @@ p {
 }
 .load-more-container #load-more {
   padding: 20px 100px;
-  background-color: #D8D8D8;
+  background-color: #d8d8d8;
   color: #000000;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition ajoutée */
 }
 .load-more-container #load-more:hover {
-  background-color: #383838;
+  background-color: #000000;
+  color: #ffffff;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1440px) {
+  .filters {
+    margin: 20px auto;
+  }
+}
+@media (max-width: 768px) {
+  .filters {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  .filters .filter-group,
+  .filters .filter-sort {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .filters .filter-group select,
+  .filters .filter-sort select {
+    width: 270px;
+  }
   .photo-grid {
-    grid-template-columns: 1fr; /* Sur les petits écrans, une seule colonne */
+    grid-template-columns: 1fr;
+    margin: 0 10px;
+  }
+  .photo-grid .photo-item {
+    max-height: 45vh;
   }
 }
 /* Style général pour l'overlay */
@@ -1008,24 +1167,16 @@ p {
   overflow: hidden;
 }
 
-/* Conteneur de la Lightbox */
-.lightbox-container {
-  position: relative;
-  text-align: center;
-}
-
 /* En-tête (nom de la photo et bouton de fermeture) */
 .lightbox-header {
   position: relative;
-  top: 10px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
 }
 
 /* Nom de la photo */
 .lightbox-title {
-  font-weight: bold;
   color: white;
   text-align: center;
   flex-grow: 1;
@@ -1034,7 +1185,10 @@ p {
 
 /* Bouton de fermeture */
 .lightbox-close {
-  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 16px;
   color: white;
   cursor: pointer;
 }
@@ -1042,32 +1196,34 @@ p {
 /* Contenu principal de la Lightbox (photo et navigation) */
 .lightbox-main {
   position: relative;
-  margin-top: 80px;
+  margin-top: 55px;
+  text-align: center;
 }
 
 /* Conteneur de la photo avec taille fixe */
 .lightbox-photo-containt {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 80vw; /* Largeur fixe du conteneur */
-  height: 80vh; /* Hauteur fixe du conteneur */
-  margin: 0 auto;
+}
+
+.lightbox-flex {
+  position: relative;
+}
+
+.lightbox-flex-photo {
+  height: 80vh;
 }
 
 /* Photo */
 .lightbox-photo {
-  max-width: 100%;
   max-height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain; /* L'image sera contenue dans les dimensions du conteneur */
 }
 
 /* Navigation (précédente et suivante) */
 .lightbox-nav {
-  position: absolute;
+  position: fixed;
   top: 50%;
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
@@ -1079,7 +1235,6 @@ p {
   align-items: center;
   color: white;
   cursor: pointer;
-  margin: 100px;
 }
 
 .nav-arrow {
@@ -1093,42 +1248,54 @@ p {
 
 /* Pied de page avec référence et catégorie */
 .lightbox-footer {
-  position: absolute;
-  left: 0;
-  width: 100%;
+  position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: white;
-  box-sizing: border-box;
 }
 
 /* Styles supplémentaires pour rendre l'interaction plus fluide */
 .lightbox-prev:hover,
 .lightbox-next:hover,
 .lightbox-close:hover {
-  color: #f1c40f; /* Changer la couleur au survol */
+  color: #ffffff; /* Changer la couleur au survol */
+  font-size: 18px; /* Taille du texte */
+  font-weight: bolder;
 }
 
-.lightbox-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-/* Media query pour adapter la taille de la lightbox sur mobile */
+/* Media queries */
 @media (max-width: 768px) {
   .lightbox-container {
-    max-width: 95%;
+    margin-top: 0;
   }
   .lightbox-title {
-    font-size: 18px;
+    font-size: 24px;
+  }
+  .lightbox-close {
+    font-size: 24px;
+    right: 0px;
+  }
+  .lightbox-main {
+    margin-top: 30px;
+  }
+  .lightbox-nav {
+    width: 90%;
+    transform: none;
+    top: 50%;
   }
   .lightbox-prev,
   .lightbox-next {
-    font-size: 30px;
+    font-size: 20px;
+    margin: 0;
   }
-  .lightbox-reference,
-  .lightbox-category {
-    font-size: 14px;
+  .lightbox-footer {
+    justify-content: space-between;
+    gap: 160px;
+  }
+  .nav-arrow {
+    font-size: 24px;
+  }
+  .nav-text {
+    display: none;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -14,24 +14,17 @@
 }
 
 
-/* Conteneur de la Lightbox */
-.lightbox-container {
-    position: relative;
-    text-align: center;
-}
 
 /* En-tête (nom de la photo et bouton de fermeture) */
 .lightbox-header {
     position: relative;
-    top: 10px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
 }
 
 /* Nom de la photo */
 .lightbox-title {
-    font-weight: bold;
     color: white;
     text-align: center;
     flex-grow: 1;
@@ -40,7 +33,10 @@
 
 /* Bouton de fermeture */
 .lightbox-close {
-    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 16px;
     color: white;
     cursor: pointer;
 }
@@ -48,31 +44,35 @@
 /* Contenu principal de la Lightbox (photo et navigation) */
 .lightbox-main {
     position: relative;
-    margin-top: 80px;
+    margin-top: 55px;
+    text-align: center;
 }
+
+
 
 /* Conteneur de la photo avec taille fixe */
 .lightbox-photo-containt {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 80vw;  /* Largeur fixe du conteneur */
-    height: 80vh; /* Hauteur fixe du conteneur */
-    margin: 0 auto;
 }
 
+.lightbox-flex {
+    position: relative;
+}
+
+.lightbox-flex-photo {
+    height: 80vh;
+}
 /* Photo */
 .lightbox-photo {
-    max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* L'image sera contenue dans les dimensions du conteneur */
 }
 
 /* Navigation (précédente et suivante) */
 .lightbox-nav {
-    position: absolute;
+    position: fixed;
     top: 50%;
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
@@ -84,7 +84,6 @@
     align-items: center;
     color: white;
     cursor: pointer;
-    margin: 100px;
 }
 
 .nav-arrow {
@@ -98,13 +97,10 @@
 
 /* Pied de page avec référence et catégorie */
 .lightbox-footer {
-    position: absolute;
-    left: 0;
-    width: 100%;
+    position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     color: white;
-    box-sizing: border-box; // Inclut padding dans la largeur totale
 }
 
 
@@ -113,32 +109,59 @@
 .lightbox-prev:hover,
 .lightbox-next:hover,
 .lightbox-close:hover {
-    color: #f1c40f; /* Changer la couleur au survol */
+    color: #ffffff; /* Changer la couleur au survol */
+    font-size: 18px; /* Taille du texte */
+    font-weight: bolder;
 }
 
-.lightbox-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
 
-/* Media query pour adapter la taille de la lightbox sur mobile */
+
+
+/* Media queries */
 @media (max-width: 768px) {
+  
     .lightbox-container {
-        max-width: 95%;
+      margin-top: 0; // Réduire l'espacement sur mobile
     }
-
+  
+  
     .lightbox-title {
-        font-size: 18px;
+      font-size: 24px; // Réduire la taille du texte
+    }
+  
+    .lightbox-close {
+      font-size: 24px; // Réduire la taille sur mobile
+      right: 0px;
+    }
+  
+    .lightbox-main {
+      margin-top: 30px; // Réduire l'espacement supérieur sur mobile
     }
 
+    .lightbox-nav {
+      width: 90%; // Réduire la largeur pour mobile
+      transform: none; // Désactiver la transformation
+      top: 50%;
+    }
+  
     .lightbox-prev,
     .lightbox-next {
-        font-size: 30px;
+      font-size: 20px; // Réduire la taille des flèches sur mobile
+      margin: 0;
+    }
+  
+    .lightbox-footer {
+        justify-content: space-between;
+        gap: 160px;
     }
 
-    .lightbox-reference,
-    .lightbox-category {
-        font-size: 14px;
+    .nav-arrow {
+      font-size: 24px; // Réduire la taille des flèches
     }
-}
+  
+    .nav-text {
+      display: none;
+    }
+  
+  }
+  

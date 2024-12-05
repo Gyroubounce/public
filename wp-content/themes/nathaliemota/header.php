@@ -14,9 +14,17 @@
         <a href="<?php echo home_url(); ?>" class="logo">
             <img src="http://nathaliemota.local/wp-content/uploads/2024/11/Logo.png" alt="Logo du site">
         </a>
-
+        
+         <!-- Bouton Menu Burger -->
+        <button class="burger-menu" aria-label="Menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
         <!-- Menu principal -->
+        
         <?php
+        
         wp_nav_menu([
             'theme_location' => 'main-menu', // Emplacement du menu
             'container'      => 'nav',        // Conteneur du menu
@@ -29,6 +37,7 @@
             'add_li_class'    => 'menu-item-class' // Ajoute une classe à chaque <li>
         ]);
         ?>
+        
     </div>
 
 </header>

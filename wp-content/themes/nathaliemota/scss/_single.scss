@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 250px;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .photo-contenair {
@@ -18,7 +19,6 @@
 
 /* Zone supérieur */
 .photo-content-wrapper {
-    padding: 20px;
     width: 100%;
 }
 
@@ -39,13 +39,14 @@
     justify-content: end;
     padding-bottom: 20px;
     background: #f9f9f9;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #000000;
     width: 50%;
+    text-transform: uppercase;
 }
 
 .photo-info h2 {
     margin-bottom: 15px;
-    text-transform: uppercase;
+    font-weight: 500;
 }
 
 .photo-info ul {
@@ -79,7 +80,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 20px;
 }
 
 .photo-interactions {
@@ -100,18 +100,21 @@
 /* Bouton Contact */
 .contact-link.btn {
     display: inline-block;
-    padding: 15px 100px;
+    width: 260px;
+    padding: 15px 15px;
     color: #000000;
     background-color: #D8D8D8;
     text-decoration: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition ajoutée */
+    text-align: center;
 }
 
 .contact-link.btn:hover {
-    background-color: #444;
+    background-color: $black;
+    color: white;
 }
 
 /* Conteneur navigation */
@@ -120,6 +123,7 @@
     flex-direction: column; /* Dispose les éléments en colonne */
     align-items:end; /* Centre les éléments horizontalement */
     width: 50%;
+    margin-top: 10px;
 }
 
 
@@ -160,20 +164,17 @@
 
 /* Englobe la section pour la centrer */
 .related-photos-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    margin-bottom: 100px;
+    padding: 0 0px;
+    margin-bottom: 80px;
+    margin-top: 0px;
 }
 
 /* Section des photos liées */
-.related-photos {
-    margin-top: 50px;
-}
+
 
 .propose {
     margin-bottom: 50px;
+    text-transform: uppercase;
 }
 
 /* Grille pour les deux photos */
@@ -219,12 +220,6 @@
 }
 
 
-.icon {
-    font-size: 2rem; /* Taille des icônes */
-    color: white; /* Couleur des icônes */
-    text-decoration: none;
-}
-
 /* Icône 'eye' centrée */
 .related-overlay .eye {
     position: absolute;
@@ -237,7 +232,11 @@
 .related-overlay .fullscreen {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: -20px;
+}
+
+.related-overlay .fullscreen img {
+    width: 50%;
 }
 
 /* Texte en bas (Référence à gauche, Catégorie à droite) */
@@ -257,4 +256,113 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 10px;
+}
+
+
+@media (max-width: 768px) {
+    /* Conteneur global */
+    .photo {
+        margin: 0 0px; /* Réduire les marges sur mobile */
+    }
+    
+    .photo-contenair {
+        margin-top: 0;
+        padding: 0 50px;
+    }
+
+    .photo-content-wrapper {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Zone principale */
+    .photo-main {
+        flex-direction: column-reverse; /* Empiler les éléments */
+        align-items: center; /* Centrer le contenu */
+        gap: 20px; /* Espacement entre les sections */
+    }
+
+    /* Informations de gauche */
+    .photo-info {
+        padding: 0px; /* Réduire les marges internes */
+        text-align: left; /* Centrer le texte */
+        border: none;
+    }
+    
+    /* Photo affichée à droite */
+    .photo-display {
+        justify-content: center; /* Centrer l'image */
+        margin-top: 20px; /* Ajouter un espacement avec la section précédente */
+    }
+
+    .photo-display img.photo-full {
+        max-height: 50vh;
+    }
+
+    /* Section interactions */
+    .photo-interactions-wrapper {
+        padding: 0 0px; /* Réduire les marges internes */
+    }
+
+    .photo-interactions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .contact{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            width: 100%;
+            border-top: 1px solid #000000;
+
+            .contact-text {
+                margin-right: 40px;
+                margin-top: 20px;
+                text-align: center;
+                width: 100%;
+ 
+            
+                p {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+
+                .contact-btn {
+                    width: 100%;
+                }
+            }
+        }
+
+        .photo-navigation {
+            display: none;
+        }
+    }
+
+    .propose {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Photos liées */
+    .related-photos {
+        margin-top: 30px; /* Espacement avec la section précédente */
+    }
+
+    .related-grid {
+        flex-direction: column; /* Empiler les deux photos */
+        gap: 20px; /* Espacement entre les éléments */
+        max-height: fit-content;
+        width: 100vw;
+        align-items: center;
+    }
+
+    .related-item img.photo-full {
+      max-height: 40vh;
+    }
+}
+
+
+@media (max-width: 670px) {
+    
 }

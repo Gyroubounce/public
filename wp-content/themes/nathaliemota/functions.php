@@ -13,9 +13,12 @@ add_action('after_setup_theme', 'nathaliemota_register_menus');
 
 // Charger les styles et scripts
 function nathaliemota_enqueue_assets() {
+
+    wp_enqueue_script('jquery');
     // Scripts JS
     wp_enqueue_script('custom-modal-script', get_template_directory_uri() . '/js/script.js');
     wp_enqueue_script('photo-navigation', get_template_directory_uri() . '/js/photo-navigation.js');
+    wp_enqueue_script('header-burger', get_template_directory_uri() . '/js/header.js');
  
     if(is_front_page()) {
         wp_enqueue_script('charger-plus', get_template_directory_uri() . '/js/charger-plus.js');

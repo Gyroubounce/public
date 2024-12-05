@@ -1,77 +1,182 @@
-/* Conteneur du header */
+// Variables de style
+$link-color: #000000;
+$link-hover-color: #0056b3;
+$link-active-color: #0073e6;
+$container-max-width: 1440px;
+$header-height: 85vh;
+$menu-hover-color: #ff6347; // Ajout pour hover en mobile
 
-.container {
-    display: flex;
-    justify-content: space-between; /* Aligne les éléments à gauche et à droite */
-    align-items: center; /* Centre les éléments verticalement */
-    width: 100%; /* Conteneur prend toute la largeur de l'écran */
-    max-width: 1440px; /* Largeur maximale pour les grands écrans */
-    margin: 0 auto; /* Centre le conteneur horizontalement */
-    height: 80px; /* Hauteur du conteneur */
-}
-
-
-.logo {
-    margin-left: 0;
-}
-
-/* Menu principal */
-.main-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-
-}
-
-
-.main-menu a {
-    text-decoration: none;
-    color: #333;
-    margin-left: 40px;
-    transition: color 0.3s ease;
-}
-
-/* Lien actif avec aria-current */
-.main-menu a[aria-current="page"] {
-    color: #0073e6; /* Couleur pour la page active */
-    font-weight: bold;
-}
-
-/* Effet au survol */
-.main-menu a:hover {
-    color: #0056b3;
-}
-
-/* Conteneur pour l'image d'en-tête */
+// Conteneur pour l'image d'en-tête
 .header-image {
-    width: 100%; /* Prend toute la largeur */
-    height: 85vh; /* Hauteur du bandeau (50% de la hauteur de la fenêtre) */
-    overflow: hidden;
-    position: relative; /* Permet des ajustements supplémentaires */
-  }
-  
-  /* Image à l'intérieur du conteneur */
-  .header-image img {
-    width: 100%; /* S'adapte à la largeur du conteneur */
-    height: 100%; /* Remplit le conteneur en hauteur */
-    object-fit: cover; /* Coupe ou étire l'image pour remplir le conteneur sans déformer */
+  width: 100%; // Prend toute la largeur
+  height: $header-height; // Hauteur du bandeau
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
   }
-  
+}
+
+// Conteneur du header
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  height: 80px;
 
 
-/* Menu mobile - pour adapter si nécessaire */
+  .logo {
+    margin-left: 0;
+  }
+
+  nav.menu-header-container {
+    display: flex;
+    justify-content: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+
+      li {
+        margin-left: 40px;
+
+        a {
+          text-decoration: none;
+          color: $link-color;
+          transition: color 0.6s ease;
+
+          &[aria-current="page"] {
+            font-weight: bold;
+          }
+
+          &:hover {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Bouton Menu Burger (affiché sur mobile uniquement)
+.burger-menu {
+  display: none; // Caché par défaut
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 40px;
+  z-index: 100;
+
+  .line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.active .line:nth-child(1) {
+    transform: rotate(45deg) translateY(16px);
+  }
+
+  &.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.active .line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-16px);
+  }
+}
+
+
+
+/* Bloquer le défilement de la page lorsque le menu est actif */
+body.menu-open {
+  overflow: hidden;
+}
+
+
+// Media Query : affichage du burger uniquement sur mobile
 @media (max-width: 768px) {
-    .main-menu {
-        flex-direction: column;
-        align-items: center;
+  .container {
+    .logo {
+      margin-left: 40px;
+    }
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+// menu mobile
+.menu-header-container {
+  position: fixed; /* Pour activer le z-index */
+  z-index: 100;
+  top: 80px; /* S'assure que le menu est toujours en haut de la page */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond sombre, légèrement transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden; /* Cacher le menu par défaut */
+  opacity: 0; /* Menu invisible par défaut */
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Transition sur l'opacité */
+
+  
+  /* Bloque le scroll de la page quand le menu est ouvert */
+  &.active {
+    visibility: visible; /* Rendre le menu visible */
+    opacity: 1; /* Menu visible */
+    transition: opacity 0.3s ease; /* Transition de l'opacité */
+    overflow: hidden; /* Empêche le scroll */
+  }
+
+  .main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer les éléments dans le menu */
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 1); /* Fond rouge */
+    width: 100%;
+    height: 100%; /* Remplir tout l'écran */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+    li {
+      margin-bottom: 15px !important;
     }
 
-    .main-menu li {
-        margin: 10px 0;
+    a {
+      color: #fff !important; /* Texte en blanc */
+      font-size: 44px; /* Taille des liens */
+      text-align: center; /* Texte centré */
+      text-decoration: none; /* Enlève les soulignements */
+      
+      &:hover {
+        color: #ddd; /* Changer la couleur au survol */
+      }
     }
-
-    /* Ajoutez un bouton de menu mobile si nécessaire */
+  }
+}
+  .nav.menu-header-container {
+    display: none; // Cacher le menu principal en mode mobile
+  }
 }

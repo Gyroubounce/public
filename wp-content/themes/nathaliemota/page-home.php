@@ -8,26 +8,29 @@ get_header();
 <div class="filters">
     <div class="filter-group">
         <!-- Menu déroulant Catégories -->
-        <select id="filter-category" class="select2">
-            <option value="">Catégories</option>
-            <?php
-            $categories = get_terms(array('taxonomy' => 'categorie', 'hide_empty' => true));
-            foreach ($categories as $category) {
-                echo '<option value="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</option>';
-            }
-            ?>
-        </select>
-
+        <div class="filter-category">
+            <select id="filter-category" class="select2">
+                <option value="">Catégories</option>
+                <?php
+                $categories = get_terms(array('taxonomy' => 'categorie', 'hide_empty' => true));
+                foreach ($categories as $category) {
+                    echo '<option value="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</option>';
+                }
+                ?>
+            </select>
+        </div>
         <!-- Menu déroulant Formats -->
-        <select id="filter-format" class="select2">
-            <option value="">Formats</option>
-            <?php
-            $formats = get_terms(array('taxonomy' => 'format', 'hide_empty' => true));
-            foreach ($formats as $format) {
-                echo '<option value="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</option>';
-            }
-            ?>
-        </select>
+        <div class="filter-format">
+            <select id="filter-format" class="select2">
+                <option value="">Formats</option>
+                <?php
+                $formats = get_terms(array('taxonomy' => 'format', 'hide_empty' => true));
+                foreach ($formats as $format) {
+                    echo '<option value="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</option>';
+                }
+                ?>
+            </select>
+        </div>   
     </div>
 
     <!-- Menu déroulant Trier par -->

@@ -82,11 +82,11 @@ get_header();
         <!-- Bloc bas -->
         <div class="photo-interactions">
             <div class="contact">
-                <div>
+                <div class="contact-text">
                 <!-- Lien de contact -->
                     <p>Cette photo vous intéresse ?</p>            
                 </div>
-                <div>
+                <div class="contact-btn">
                     <!-- Lien pour ouvrir la modale -->
                     <a href="javascript:void(0);" class="contact-link btn" data-ref="<?php the_field('reference'); ?>">
                     Contact
