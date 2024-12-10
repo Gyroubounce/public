@@ -438,12 +438,8 @@ body.menu-open {
   .about-page h1 {
     padding: 20px;
   }
-  .about-page h2 {
-    padding: 20px;
-  }
   .about-page p {
     font-size: 1rem; /* Réduit la taille du texte */
-    padding: 5px; /* Réduit l'espacement des paragraphes */
   }
   .about-page .about-content {
     text-align: left; /* Centre le texte sur mobile pour une meilleure lisibilité */
