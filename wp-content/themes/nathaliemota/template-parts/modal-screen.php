@@ -24,15 +24,16 @@
                 </div>
                 
             </div>
-                      <!-- Navigation (précédente et suivante) -->
-                      <div class="lightbox-nav">
-                    <span class="lightbox-prev" id="lightbox-prev">
-                        <span class="nav-arrow">&#8592;</span> <span class="nav-text">Précédente</span>
-                    </span>
-                    <span class="lightbox-next" id="lightbox-next">
-                        <span class="nav-text">Suivante</span> <span class="nav-arrow">&#8594;</span>
-                    </span>
-                </div>
+                    <!-- Navigation (précédente et suivante) -->
+            <div class="lightbox-nav">
+                <span class="lightbox-prev" id="lightbox-prev">
+                    <span class="nav-arrow">&#8592;</span> <span class="nav-text">Précédente</span>
+                </span>
+                <span class="lightbox-next" id="lightbox-next">
+                    <span class="nav-text">Suivante</span> <span class="nav-arrow">&#8594;</span>
+                </span>
+            </div>
+            
         </div>
     </div>   
 </div>

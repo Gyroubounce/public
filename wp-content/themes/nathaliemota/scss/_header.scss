@@ -2,8 +2,8 @@
 $link-color: #000000;
 $link-hover-color: #0056b3;
 $link-active-color: #0073e6;
-$container-max-width: 1440px;
-$header-height: 85vh;
+$container-max-width: 1148px;
+$header-height: 962px;
 $menu-hover-color: #ff6347; // Ajout pour hover en mobile
 
 // Conteneur pour l'image d'en-tête
@@ -31,7 +31,7 @@ $menu-hover-color: #ff6347; // Ajout pour hover en mobile
   width: 100%;
   max-width: $container-max-width;
   margin: 0 auto;
-  height: 80px;
+  height: 72px;
 
 
   .logo {
@@ -54,6 +54,7 @@ $menu-hover-color: #ff6347; // Ajout pour hover en mobile
         a {
           text-decoration: none;
           color: $link-color;
+          text-transform: uppercase;
           transition: color 0.6s ease;
 
           &[aria-current="page"] {
@@ -114,7 +115,7 @@ body.menu-open {
 
 
 // Media Query : affichage du burger uniquement sur mobile
-@media (max-width: 768px) {
+@media (max-width: 375px) {
   .container {
     .logo {
       margin-left: 40px;
@@ -128,7 +129,7 @@ body.menu-open {
 .menu-header-container {
   position: fixed; /* Pour activer le z-index */
   z-index: 100;
-  top: 80px; /* S'assure que le menu est toujours en haut de la page */
+  top: 72px; /* S'assure que le menu est toujours en haut de la page */
   left: 0;
   width: 100%;
   height: 100%;
@@ -162,6 +163,7 @@ body.menu-open {
 
     li {
       margin-bottom: 15px !important;
+      margin-left: 0 !important;
     }
 
     a {

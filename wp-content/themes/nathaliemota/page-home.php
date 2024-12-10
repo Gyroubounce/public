@@ -74,7 +74,7 @@ get_header();
                     <!-- Icônes de liens -->
                     <a href="#" data-lightbox="image-<?php the_ID(); ?>" class="icon fullscreen" data-photo-url="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>" data-photo-title="<?php the_title(); ?>" data-photo-reference="<?php the_field('reference'); ?>" data-photo-category="<?php echo esc_html( get_the_terms( get_the_ID(), 'categorie' )[0]->name ); ?>">
                             <img src="http://nathaliemota.local/wp-content/uploads/2024/11/Icon_fullscreen.png" alt="icône full-screen">
-                        </a>
+                    </a>
                     
                     <!-- Texte en bas -->
                     <div class="text-filtre">

@@ -353,3 +353,40 @@ Stack trace:
 [05-Dec-2024 07:56:52 UTC] Automatic updates complete.
 [05-Dec-2024 13:35:25 UTC] Automatic updates starting...
 [05-Dec-2024 13:35:26 UTC] Automatic updates complete.
+[09-Dec-2024 07:54:07 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\class-wpdb.php on line 1982
+[09-Dec-2024 08:01:13 UTC] Automatic updates starting...
+[09-Dec-2024 08:01:14 UTC] Automatic updates complete.
+[09-Dec-2024 10:21:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\home.php:6
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-blog-header.php(19): require_once('C:\\Users\\lidry\\...')
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\index.php(17): require('C:\\Users\\lidry\\...')
+#3 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\home.php on line 6
+[09-Dec-2024 10:21:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function the_field() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\functions.php:192
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\class-wp-hook.php(324): load_filtered_photos('')
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-admin\admin-ajax.php(192): do_action('wp_ajax_load_fi...')
+#4 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\functions.php on line 192
+[09-Dec-2024 10:21:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\home.php:6
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-blog-header.php(19): require_once('C:\\Users\\lidry\\...')
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\index.php(17): require('C:\\Users\\lidry\\...')
+#3 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\home.php on line 6
+[09-Dec-2024 10:21:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function the_field() in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\functions.php:192
+Stack trace:
+#0 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\class-wp-hook.php(324): load_filtered_photos('')
+#1 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-admin\admin-ajax.php(192): do_action('wp_ajax_load_fi...')
+#4 {main}
+  thrown in C:\Users\lidry\Desktop\Formations\OpenClassRoom\Projet_011\nathaliemota\app\public\wp-content\themes\nathaliemota\functions.php on line 192
+[09-Dec-2024 13:31:09 UTC] Automatic updates starting...
+[09-Dec-2024 13:31:10 UTC] Automatic updates complete.
+[10-Dec-2024 07:52:15 UTC] Automatic updates starting...
+[10-Dec-2024 07:52:15 UTC] Automatic updates complete.

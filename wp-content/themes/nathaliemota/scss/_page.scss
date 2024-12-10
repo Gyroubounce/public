@@ -1,0 +1,58 @@
+.about-page {
+    background-color: #f9f9f9;
+    max-width: 1148px;
+    margin: 0 auto; /* Centre horizontalement */
+    display: flex; /* Active le flexbox */
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    padding-bottom: 50px;
+}
+
+.about-page h1 {
+    padding: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.about-page .about-content {
+    margin: 0 auto;
+    line-height: 1.8;
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.about-page h2 {
+    text-align: left; /* Aligne les sous-titres à gauche */
+    text-transform: uppercase;
+    padding: 30px 0;
+}
+
+.about-page p {
+    margin: 0 auto; /* Centre les paragraphes */
+    padding: 10px 0px;
+}
+
+@media (max-width: 375px) {
+    .about-page {
+        padding: 20px; /* Réduit les marges internes sur mobile */
+    }
+
+    .about-page h1 {
+        padding: 20px;
+
+    }
+
+    .about-page h2 {
+        padding: 20px;
+
+    }
+
+    .about-page p {
+        font-size: 1rem; /* Réduit la taille du texte */
+        padding: 5px; /* Réduit l'espacement des paragraphes */
+    }
+
+    .about-page .about-content {
+        text-align: left; /* Centre le texte sur mobile pour une meilleure lisibilité */
+    }
+}

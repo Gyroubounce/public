@@ -118,7 +118,7 @@
 
 
 /* Media queries */
-@media (max-width: 768px) {
+@media (max-width: 375px) {
   
     .lightbox-container {
       margin-top: 0; // Réduire l'espacement sur mobile
@@ -151,7 +151,7 @@
     }
   
     .lightbox-footer {
-        justify-content: space-between;
+        justify-content: center;
         gap: 160px;
     }
 

@@ -191,8 +191,23 @@ function load_filtered_photos() {
                      <!-- Icônes de liens -->
                      <a href="#" data-lightbox="image-<?php the_ID(); ?>" class="icon fullscreen" data-photo-url="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>" data-photo-title="<?php the_title(); ?>" data-photo-reference="<?php the_field('reference'); ?>" data-photo-category="<?php echo esc_html( get_the_terms( get_the_ID(), 'categorie' )[0]->name ); ?>">
                             <img src="http://nathaliemota.local/wp-content/uploads/2024/11/Icon_fullscreen.png" alt="icône full-screen">
-                        </a>
-                    
+                    </a>
+                    <div class="text-filtre">
+                        <div class="text-filtre-flex">
+                            <div><?php echo esc_html(get_field('reference') ?: ''); ?></div>
+                            <div>
+                                <?php
+                                $categories = get_field('categories'); 
+                                if ($categories && !is_wp_error($categories)) {
+                                    $category_term = get_term($categories[0], 'categorie');
+                                    echo esc_html($category_term->name ?? 'Non classé');
+                                } else {
+                                    echo 'Non classé';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <?php

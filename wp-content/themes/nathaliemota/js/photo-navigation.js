@@ -37,7 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
         prevPhoto.addEventListener('mouseover', function() {
             const prevPostUrl = prevPhoto.dataset.url;
             console.log("Survol de la flèche précédente. URL de la photo précédente :", prevPostUrl);
+            thumbnailContainer.style.opacity = '1';
             updateThumbnail(prevPostUrl);  // Mettre à jour la miniature pour le post précédent
+        });
+
+        prevPhoto.addEventListener('mouseout', function() { thumbnailContainer.style.opacity = '0'; // Rendre le conteneur invisible });
         });
     }
 
@@ -45,8 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
         nextPhoto.addEventListener('mouseover', function() {
             const nextPostUrl = nextPhoto.dataset.url;
             console.log("Survol de la flèche suivante. URL de la photo suivante :", nextPostUrl);
+            thumbnailContainer.style.opacity = '1';
             updateThumbnail(nextPostUrl);  // Mettre à jour la miniature pour le post suivant
         });
+
+        nextPhoto.addEventListener('mouseout', function() { thumbnailContainer.style.opacity = '0'; // Rendre le conteneur invisible
+         });
     }
 
     // Clic sur les flèches pour rediriger
