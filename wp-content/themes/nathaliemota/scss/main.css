@@ -295,12 +295,12 @@ p {
   transform: rotate(-45deg) translateY(-16px);
 }
 
-/* Bloquer le défilement de la page lorsque le menu est actif */
-body.menu-open {
-  overflow: hidden;
-}
-
 @media (max-width: 375px) {
+  .container {
+    position: fixed;
+    background-color: white;
+    z-index: 1;
+  }
   .container .logo {
     margin-left: 40px;
   }
@@ -446,7 +446,7 @@ body.menu-open {
   }
 }
 .modal-overlay {
-  display: none;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -460,7 +460,8 @@ body.menu-open {
   transition: opacity 0.3s ease;
 }
 .modal-overlay.open {
-  display: flex;
+  visibility: visible;
+  padding: 12vh 32vw;
   opacity: 1;
 }
 .modal-overlay .modal-content {
@@ -544,6 +545,7 @@ body.menu-open {
 @media (max-width: 768px) {
   .modal-content {
     max-width: 300px !important;
+    margin: -12vh -21vw;
   }
   #wpcf7-f45-o1 {
     max-width: 290px !important;
@@ -821,7 +823,7 @@ body.menu-open {
     margin: 0 0px; /* Réduire les marges sur mobile */
   }
   .photo-contenair {
-    margin-top: 0;
+    margin-top: 80px;
     padding: 0 50px;
   }
   .photo-content-wrapper {

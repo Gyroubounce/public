@@ -7,6 +7,7 @@
 
 get_header();
 ?>
+<h1 class="sr-only">NATHALIE MOTA</h1>
 <div class="photo">
     <div class="photo-contenair">
         <div class="photo-content-wrapper">

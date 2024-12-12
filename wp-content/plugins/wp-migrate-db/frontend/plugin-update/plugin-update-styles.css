@@ -33,13 +33,14 @@
 .plugin-update-tr.wpmdbpro-custom .update-message.post-shiny-updates p::before {
   position: absolute;
 }
-.plugin-update-tr.wpmdbpro-custom.legacy-addon .update-message p::before {
-  content: "\f182";
-}
 .plugin-update-tr.wpmdbpro-custom-visible .update-message.post-shiny-updates p span,
 .plugin-update-tr.wpmdbpro-custom .update-message.post-shiny-updates p span {
   margin-left: 30px;
   display: block;
+}
+.plugin-update-tr.wpmdbpro-custom-visible.legacy-addon .update-message p::before,
+.plugin-update-tr.wpmdbpro-custom.legacy-addon .update-message p::before {
+  content: "\f182";
 }
 
 .plugins #the-list tr.wpmdbpro-has-message td,
@@ -50,6 +51,4 @@
 
 .plugins .plugin-update-tr .wpmdb-compat-plugin-row-error .notice {
   margin-top: 0;
-}
-
-/*# sourceMappingURL=plugin-update-styles.css.map */
+}/*# sourceMappingURL=plugin-update-styles.css.map */

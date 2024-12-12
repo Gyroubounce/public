@@ -3,7 +3,8 @@
 
 // Masquer la modale par défaut
 .modal-overlay {
-  display: none; // Initialement cachée
+  //display: none; // Initialement cachée
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +18,9 @@
   transition: opacity 0.3s ease; // Transition pour l'animation d'apparition
 
   &.open {
-    display: flex; // Utiliser flexbox pour centrer le contenu
+   // display: flex; // Utiliser flexbox pour centrer le contenu
+    visibility: visible;
+    padding: 12vh 32vw;
     opacity: 1; // La modale devient visible
   }
 
@@ -111,6 +114,7 @@
 @media (max-width: 768px) {
   .modal-content {
     max-width: 300px !important;
+    margin: -12vh -21vw;
   }
   #wpcf7-f45-o1 {
     max-width: 290px !important;

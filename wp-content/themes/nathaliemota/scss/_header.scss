@@ -108,15 +108,16 @@ $menu-hover-color: #ff6347; // Ajout pour hover en mobile
 
 
 
-/* Bloquer le défilement de la page lorsque le menu est actif */
-body.menu-open {
-  overflow: hidden;
-}
+
 
 
 // Media Query : affichage du burger uniquement sur mobile
 @media (max-width: 375px) {
   .container {
+    position: fixed;
+    background-color: white;
+    z-index: 1;
+    
     .logo {
       margin-left: 40px;
     }
