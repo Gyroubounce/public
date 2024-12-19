@@ -112,7 +112,7 @@ $menu-hover-color: #ff6347; // Ajout pour hover en mobile
 
 
 // Media Query : affichage du burger uniquement sur mobile
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   .container {
     position: fixed;
     background-color: white;
@@ -182,4 +182,6 @@ $menu-hover-color: #ff6347; // Ajout pour hover en mobile
   .nav.menu-header-container {
     display: none; // Cacher le menu principal en mode mobile
   }
+
 }
+

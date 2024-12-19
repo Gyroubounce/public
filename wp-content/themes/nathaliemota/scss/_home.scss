@@ -302,6 +302,7 @@
   
     #load-more {
       padding: 20px 100px;
+      margin: 20px 0px;
       background-color: #d8d8d8;
       color: #000000;
       border: none;
@@ -319,7 +320,7 @@
   
 
 
-@media (max-width: 380px) {
+@media (max-width: 768px) {
 
   .filters {
     display: flex;
